@@ -1,0 +1,27 @@
+%
+% Sætning 8.1.15 ([L] 2.2.2) side 144
+%
+
+\begin{saetning}{8.1.15}
+	$A \in \mat_{n,n}(\mathbb{F})$ er singulær $\Lra$ $\det(A)=0$.
+\end{saetning}
+
+\begin{bevis}
+	$A \sim H$, hvor $H$ er på RREF.
+	\[
+		A=E_k E_{k-1} \cdots E_1 H
+	\]
+	hvilket giver en determinant
+	\begin{align*}
+		\det(A) =& \det(E_k E_{k-1} \cdots E_1 H) \\
+			=& \det(E_k)\det(E_{k-1} \cdots E_1 H) \\
+			=& \det(E_k)\det(E_{k-1}) \cdots \det(E_1)\det(H)
+	\end{align*}
+
+	\begin{itemize}
+		\item ($\Ra$) $H$ må have en nulrække, hvilket giver $\det(H) = 0 \Ra 
+			\det(A) = 0$.
+		\item ($\La$) $H=I$; $H$ er ikke singulær hvilket betyder at $\det(A)
+			\ne 0$.
+	\end{itemize}
+\end{bevis}

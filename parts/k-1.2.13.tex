@@ -1,0 +1,39 @@
+\begin{korollar}{1.2.13}
+	Lad $A \in Mat_{m,n}(\mathbb{F})$.
+	\begin{enumerate}
+		\item Det homogene ligningssystem $Ax = 0$ har altid en løsning, 
+			$x = 0$.
+		\item Hvis $n > m$ så har $Ax = 0$ flere løsninger.
+	\end{enumerate}
+\end{korollar}
+For eksempel har nedenstående $Mat_{2,3}(\mathbb{F})$ uendelige mange 
+løsninger, hvis det gælder at den er lig $0$.
+\[ 
+	\begin{bmatrix}
+		1 & 0 & 2 \\
+		0 & 1 & 3
+	\end{bmatrix}
+	\begin{bmatrix}
+		x_1 \\ 
+		x_2 \\
+		x_3 
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		0 \\ 
+		0 
+	\end{bmatrix}
+\] 
+\begin{bevis}
+	\begin{enumerate}
+		\item Da $A0 = 0$ er $0$ en løsning til ligningssystemet.
+		\item Lad $A \sim H$ på RREF, så $[A\,|\,0] = [H\,|\,0]$. $H$ har $m$
+			rækker, og dermed højst $m$ pivot'er, og da $n > m$ må der altså
+			være mindst $n-m$ søjler uden pivot. 
+			
+			Så ligningssystemet må have
+			uendeligt mange løsninger hvis $\mathbb{F}$ har uendeligt mange
+			elementer, eller $q^{n-m}$ løsninger, hvis $\mathbb{F}$ har $p <
+			\infty$ elementer.
+	\end{enumerate}
+\end{bevis}

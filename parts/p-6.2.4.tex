@@ -1,0 +1,27 @@
+\begin{proposition}{6.2.4 (Pythagoras)}
+	Lad $V$ være et $\mathbb{C}$-vektorrum med indre produkt 
+	$\langle\;,\:\rangle$. Lad $\vec{u}, \vec{v} \in V$ være ortogonale. 
+	Der gælder det:
+	\[
+		\norm{\vec{u} + \vec{v}}^2 = \norm{\vec{u}}^2 + \norm{\vec{v}}^2
+	\]
+	Dette gælder ligeledes for det reele ($\mathbb{R}$) tilfælde.
+\end{proposition}
+
+\begin{bevis}
+	\begin{align*}
+		\norm{\vec{u} + \vec{v}}^2 &= \langle\vec{u} + \vec{v}, \vec{u} + 
+		\vec{v}\rangle \\
+		&= \langle\vec{u},\vec{u}\rangle + \langle\vec{u},\vec{v}\rangle +
+		\langle\vec{v},\vec{u}\rangle + \langle\vec{v},\vec{v}\rangle \\
+		&= \norm{\vec{u}}^2 + \norm{\vec{v}}^2
+	\end{align*}
+	Da $\vec{u}, \vec{v}$ er ortogonale gælder:
+	\[
+		\langle\vec{u},\vec{v}\rangle \langle\vec{v},\vec{u}\rangle = 
+		\langle\vec{u},\vec{v}\rangle \ol{\langle\vec{u},\vec{v}\rangle} = 
+		0\ol{0} = 0
+	\]
+	Og derfor fås ligheden $\norm{\vec{u} + \vec{v}}^2 = \norm{\vec{u}}^2 + 
+	\norm{\vec{v}}^2$.
+\end{bevis}

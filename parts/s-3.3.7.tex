@@ -1,0 +1,123 @@
+\begin{proposition}{3.3.7}
+	Lad $\mathcal{U} = {\vec{u_1}, \ldots, \vec{u_n}}$, $\mathcal{V} = {
+	\vec{v_1}, \ldots, \vec{v_n}}$ 
+	være 2 ordnede baser i $W \in \mathbb{F}^n$. 
+	Lad $K \in Mat_{n,n}(\mathbb{F})$ være givet givet i søjleform ved $[[
+	\vec{u_1}]_{\mathcal{V}}, \ldots, [\vec{u_n}]_{\mathcal{V}}]$.
+	Følgende gør sig da gældende:
+	\begin{enumerate}
+		\item $K$ er invertibel
+		\item $\forall \vec{w} \in W, [\vec{w}]_{\mathcal{V}} = 
+			K[\vec{w}]_{\mathcal{U}}$.
+		\item $K$ er den entydige matric i $Mat_{n,n}(\mathbb{F})$, således at
+			(2) gør sig gældende.
+	\end{enumerate}
+\end{proposition}
+
+\begin{bevis}
+	\begin{enumerate}
+		\item Vi antager at $K' = K\begin{bmatrix}x_1\\ \vdots 
+			\\x_n\end{bmatrix} = 0$, så vi kan skrive $K'$ som en lineær 
+			kombination:
+
+			\[
+				K' = x_1[\vec{u_1}]_{\mathcal{V}} + \ldots + 
+					x_n[\vec{u_n}]_{\mathcal{V}} = [x_1\vec{u_1} + \ldots + 
+					x_n\vec{u_n}]_{\mathcal{V}} = 0
+			\]
+			
+			Hvor det sidste lighedstegn kommer af at koordinatisering bevarer
+			lineær struktur.
+			Da $K' = 0$ må det gælde $\forall x = 0$, da $\vec{u_1}, \ldots, 
+			\vec{u_n}$ er uafhængige, per definitionen af en basis, og dermed 
+			ikke kan være 0. 
+			Ligningssystemet har da kun løsningen $0$ per sætning 1.4.8, og
+			$K$ er dermed invertibel.
+		\item For $i = 1,\dots,n$ kan $\vec{u_i}$ skrives som en lineær kombination
+			$\vec{u_i} = k_{1i} \vec{v_1}+\dots + k_{ni} \vec{v_n}$ hvor
+			\[
+				\begin{bmatrix}
+					k_{1i} \\
+					\vdots \\
+					k_{ni}
+				\end{bmatrix} = [ \vec{u_i} ]_\mathcal{V}
+			\]
+			er den $i$'te søjle i $K$.
+
+			En anden vektor $\vec{w} = c_1 \vec{u_1} + \dots + c_n \vec{u_n}$ 
+			\[
+				[ \vec{w} ]_\mathcal{U} = \begin{bmatrix}
+					c_{1} \\
+					\vdots \\
+					c_{n}
+				\end{bmatrix}
+			\]
+			Skrives denne helt ud har vi
+			\begin{align*}
+				\vec{w} &= c_1 (k_{11} \vec{v_1} + \dots + k_{n1} \vec{v_n}) + \dots + c_n
+						(k_{1n} \vec{v_1} + \dots + k_{nn} \vec{v_n}) \\
+					&= (c_1 k_{11} + \dots + c_n k_{1n}) \vec{v_1} + \dots + (c_1 k_{n1} +
+						\dots + c_n k_{nn}) \vec{v_n}
+			\end{align*}
+			hvor
+			\[
+				[ \vec{w} ]_\mathcal{V} = \begin{bmatrix}
+					k_{11} c_1 + \dots + k_{1n} c_n \\
+					\vdots \\
+					k_{n1} c_1 + \dots + k_{nn} c_n
+				\end{bmatrix} = K \begin{bmatrix}
+					c_1 \\
+					\vdots \\
+					c_n
+				\end{bmatrix} = K[\vec{w}]_\mathcal{U}
+			\]
+
+			Vi har hermed vist at $K$ er \emph{koordinattransformationsmatricen} til 
+			$\mathcal{V}$-koordinater fra $\mathcal{U}$-koordinater.
+
+			\[
+				[ \vec{w} ]_\mathcal{V} = K_{\mathcal{V},\mathcal{U}} [ \vec{w}
+				]_\mathcal{U}
+			\]
+		\item Vi antager at $K'$ eksisterer så
+			\[
+				[\vec{w}]_\mathcal{V} = K'[\vec{w}]_\mathcal{U}, \;\forall\; \vec{w} \in
+				\mathbb{F}^n
+			\]
+			Det gælder så for $u_i, i = 1, \ldots, n$ at
+			\[
+				\begin{bmatrix}
+					k_{1i}\\
+					\vdots\\
+					k_{1n}
+				\end{bmatrix}
+				=
+				[\vec{u}_i]_\mathcal{V} = K'[\vec{u}_i]_\mathcal{U} = K'\vec{e}_i =
+				\begin{bmatrix}
+					k'_{1i}\\
+					\vdots\\
+					k'_{1n}
+				\end{bmatrix}
+			\]
+			for $i = 1, \ldots, n$.
+
+			Da 
+			$$
+			\mathcal{U} = \{\vec{u}_1, \cdots, \vec{u}_i, \cdots, \vec{u}_n\}
+			\Ra \vec{u}_i = \mathcal{U}
+			\begin{bmatrix}
+				0\\
+				\vdots\\
+				1 \tikz[baseline=-.5ex] \node[coordinate] (ith){};\\
+				\vdots\\
+				n
+			\end{bmatrix}
+			\tikz[overlay]{
+				\node[fill=red!25] (ith1) at (0.8,1.5) {\textit{i}'te index};
+				\path[->] (ith1) edge [bend left] (ith);
+			}
+			= \mathcal{U}e_i
+			$$
+			Så $K$ og $K'$ har samme søjler, og de er ens.
+	\end{enumerate}
+\end{bevis}

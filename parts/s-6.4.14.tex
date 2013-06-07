@@ -1,0 +1,50 @@
+%
+% Sætning 6.4.14 ([L] 5.5.7) side 111
+%
+
+\begin{saetning}{6.4.14}
+	Projektionen (eller ortogonalprojektionen) af $v$ på $S$ er defineret ved
+	\[
+		\vec{p} -\vec{v} \in S^\bot \Lra \vec{p} = \sum^k_{i=1} \langle
+		\vec{v}, \vec{s}_i \rangle \vec{s}_i
+	\]
+	hvor $S$ er et underrum af det indre-produktrum $V$, med indre produkt
+	$\langle$ , $\rangle$ og $\{\vec{s}_1, \dotsc, \vec{s}_k\}$ er en
+	ortonormalbasis for $S$, med $v \in V$ og $p \in S$.
+\end{saetning}
+
+\begin{bevis}
+	Projektionen $p$ kan skrives som
+	\[
+		p=c_1 \vec{s}_1 + \dotso + c_k \vec{s}_k
+	\]
+	med $c_1, \dotsc, c_k \in \mathbb{K}$ hvor $c_i = \langle \vec{p},
+	\vec{s_i} \rangle$ for $i=1,\dotsc,k$, så
+	\[
+		p=\langle \vec{p},	\vec{s_k} \rangle \vec{s}_1 + \dotso + \langle
+		\vec{p}, \vec{s_k} \rangle \vec{s}_k = \sum^k_{i=1} \langle \vec{p},
+		\vec{s_i} \rangle \vec{s}_i
+	\]
+
+	\noindent Der gælder derfor
+	\begin{align*}
+		\vec{p} - \vec{v} \in S \Lra & \langle \vec{s}, \vec{p} - \vec{v}
+				\rangle & \text{for alle } \vec{s} \in S \\
+			\Lra & \langle \alpha_1 \vec{s}_1, \dotsc, \alpha_k \vec{s}_k, 
+				\vec{v} - \vec{p} \rangle & \text{for alle } \alpha_1, \dotsc,
+				\alpha_k \in \mathbb{K} \\
+			\Lra & \alpha_1 \langle \vec{s}_1, \vec{v} - \vec{p} \rangle,
+				\dotsc, \alpha_k \langle \vec{s}_k, \vec{v} -\vec{p} \rangle \\
+			\Lra & \langle \vec{s}_i, \vec{v} - \vec{p} \rangle & \text{for }
+				i = 1, \dotsc, k \\
+			\Lra & \langle \vec{s}_i, \vec{v} \rangle = \langle
+				\vec{s}_i, \vec{p} \rangle \\
+			\Lra & \langle \vec{p}, \vec{s}_i \rangle = \langle
+				\vec{v}, \vec{s}_i \rangle
+	\end{align*}
+	hvilket betyder at vi kan redefinere $\vec{p}$ som værende afhængig af
+	$\vec{v}$
+	\[
+		\vec{p} = \sum^k_{i=1} \langle \vec{v}, \vec{s}_i \rangle \vec{s}_i
+	\]
+\end{bevis}

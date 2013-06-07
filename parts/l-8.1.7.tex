@@ -1,0 +1,37 @@
+\begin{lemma}{8.1.7}
+	Lad $A \in Mat_{n,n}(\mathbb{F})$. Der gælder $\det(A^T) = \det(A)$.
+\end{lemma}
+
+\begin{bevis}
+	Vi beviser lemmaet ved induktion. Vores basistilfælde kan være for matricen 
+	hvor $n = 2$.
+	\begin{align*}
+		\det(A) &= \det\begin{pmatrix}
+			a & b \\
+			c & d
+		\end{pmatrix} = ad - bc\\
+		\det(A^T) &= \det\begin{pmatrix}
+			a & c \\
+			b & d
+		\end{pmatrix} = ad - cb
+	\end{align*}
+	I ovenstående må der gælde lighedstegn, da den kommutative lov er gældende.
+	
+	\noindent Herefter opstiller vi induktions hypotesen at $\det(A^T) = 
+	\det(A)$ når $A$ er en $(n-1) \times (n-1)$ matrix.
+	
+	\noindent Vi vil herefter via induktion vise at dette også gør sig gældende
+	for en $n \times n$ matrix.
+	\[
+		\det(A^T) = \sum_{j=1}^{n}(-1)^{1+j}a_{1j}\det(M(A^T)_{j1})
+	\]
+	Vi kan da skrive minoren som $M(A^T)_{j1} = (M(A)_{1j})^T$. Da må det per 
+	induktionshypotesen gælde:
+	\[
+		M(A^T)_{j1} = (M(A)_{1j})^T = \det(M(A)_{1j})
+	\]
+	Da minoren netop er en $(n-1) \times (n-1)$ matrix. Derfor må:
+	\[
+		\det(A^T) = \sum_{j=1}^{n}(-1)^{1+j}a_{1j}\det(M(A)_{1j}) = \det(A)
+	\]
+\end{bevis}

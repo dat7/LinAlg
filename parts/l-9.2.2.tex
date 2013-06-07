@@ -1,0 +1,53 @@
+%
+% Lemma 9.2.2 ([L] 6.3.2) side 163
+%
+
+\begin{lemma}{9.2.2}
+	Lad $A \in \mat_{n,n}(\mathbb{F})$. Følgende er ækvivalente
+	\begin{enumerate}[(1)]
+		\item Der findes en basis for $\mathbb{F}^n$ bestående af egenvektorer
+			for $A$.
+		\item Der findes $n$ lineært uafhængige egenvektorer for $A$.
+		\item Der findes en invertibel matrix $V \in \mat_{n,n}(\mathbb{F})$ så
+			$V^{-1}AV$ er en diagonalmatrix.
+	\end{enumerate}
+\end{lemma}
+
+\begin{bevis}
+	\begin{description}
+		\item[(1) $\Ra$ (2)] Oplagt, da en basis er uafhængige.
+		\item[(2) $\Ra$ (1)] Hvis man har $n$ lineært uafhængige vektorer
+			danner de en basis, se \hyperlink{3.1.4}{sætning 3.1.4}.
+		\item[(2) $\Ra$ (3)] Lad $\vec{v_1}, \dotsc, \vec{v_n}$ være lineært
+			uafhængige egenvektorer med tilhørende $\lambda_1, \dotsc,
+			\lambda_n$ for $A$, hvor $V = [\vec{v_1}, \dotsc, \vec{v_n}]$ i
+			søjleform. Vi har
+			\begin{align*}
+				AV = A[\vec{v_1}, \dotsc, \vec{v_n}] &= [A\vec{v_1}, \dotsc,
+						A\vec{v_n}] \\
+					&= [\lambda_1\vec{v_1}, \dotsc, \lambda_n\vec{v_n}] \\
+					&= [\vec{v_1}, \dotsc, \vec{v_n}] D \\
+					&= VD
+			\end{align*}
+			hvor
+			\[
+				D = \begin{bmatrix}
+					\lambda_1 & & 0 \\
+					& \ddots & \\
+					0 & & \lambda_n
+				\end{bmatrix}
+			\]
+			er diagonal. Da $V$ har uafhængige søjler er den diagonal og 
+			$V^{-1}AV = V^{-1}VD = D$.
+		\item[(3) $\Ra$ (2)] Antag, $X \in \mat_{n,n}(\mathbb{F})$ så
+			$X^{-1}AX = D$, hvor $D$ er er diagonal, som ovenover. Da $X$ er 
+			invertibel er søjlerne i $X = [\vec{x}_1, \dotsc, \vec{x}_n]$
+			uafhængige.
+			
+			Vi har $AX = X(X^{-1}AX) = XD$, dvs. $[A\vec{v_1}, \dotsc,
+			A\vec{x_n}] = [\lambda_1\vec{v_1}, \dotsc, \lambda_n\vec{x_n}]$.
+			Dette giver $A\vec{x_i} = \lambda_i \vec{x_i}$, hvilket betyder
+			at $\vec{x}_1, \dotsc, \vec{x}_n$ er uafhængige og egenvektorer for
+			$A$.
+	\end{description}
+\end{bevis}

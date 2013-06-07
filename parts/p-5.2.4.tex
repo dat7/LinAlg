@@ -1,0 +1,14 @@
+\begin{proposition}{5.2.4}
+	Systemet $A^T Ax = A^T b$ er konsistent, og $z$ er en løsning til dette 
+	system, hhvis $z$ er en mindste kvadraters løsning til $Ax =  b$.
+\end{proposition}
+
+\begin{bevis}
+	\begin{align*}
+		Az = p &\Lra b - Az \in (S\text{ø}(A))^\bot 
+				& \text{fordi }p = P_{S\text{ø}(A)}(b) \\
+			& \Lra b - Az \in N(A^T) & \text{Sætning 5.1.16} \\
+			& \Lra A^T (b - Az) = 0 \\
+			& \Lra A^T b = A^T Az
+	\end{align*}
+\end{bevis}

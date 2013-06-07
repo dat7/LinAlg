@@ -1,0 +1,49 @@
+\begin{saetning}{2.2.9}
+	Lad $V$ være et $\mathbb{F}$-vektorrum, lad $v_1, \dots, v_n \in V$, og lad
+	$S = \spn(v_1, \dots, v_n)$. Et element $v \in S$ kan udtrykkes 
+	\textit{entydigt} som en lineær kombination af $v_1, \dots, v_n \Lra v_1, 
+	\dots, v_n$ er lineært uafhængige.
+\end{saetning}
+
+\begin{bevis}
+Da $v \in S$ ved vi per definition af spannet, at vi kan skrive $v$ som en 
+lineær kombination.
+
+\[
+	v = a_1 v_1 + \dots + a_n v_n \text{ med } a_1, \dots a_n \in \mathbb{F}
+\]
+
+Hvis der samtidig gælder at vi kan skrive v som:
+
+\[
+	v = b_1 v_1 + \dots + b_n v_n \text{ med } b_1, \dots b_n \in \mathbb{F}
+\]
+
+så er 
+
+\[
+	0 = v - v = (a_1-b_1)v_1 + \dots + (a_n-b_n)v_n
+\]
+
+Hvis $v_1, \dots, v_n$ er lineært \textbf{uafhængige} så må:
+
+\[
+	(a_1-b_1) = 0, \dots, (a_n-b_n) = 0 \Lra a_1 = b_1, \dots, a_n = b_n
+\]
+
+Der findes dermed kun 1 måde at udtrykke $v$ som en lineær kombination af 
+$v_1, \dots, v_n$
+
+Hvis $v_1, \dots, v_n$ er lineært \textbf{afhængige}, må der findes $c_1, 
+\dots, c_n \in \mathbb{F}$, hvor ikke alle $c_i$ er 0, og hvor $c_1 v_1 + \dots
+c_n v_n = 0$, hvilket giver os:
+
+\[
+	v = v + 0 = (a_1 v_1 + \dots + a_n v_n) + (c_1 v_1 + \dots c_n v_n)
+	= (a_1 + c_1)v_1 + \dots + (a_n + c_n)v_n
+\]
+
+Altså er $(a_1 + c_1)v_1 + \dots + (a_n + c_n)v_n$ et andet udtryk for en
+lineær kombination af $v$, da mindst 1 $c$ ikke er 0 og ligningen derfor ikke
+er lig den øverste.
+\end{bevis}

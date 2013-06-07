@@ -1,0 +1,22 @@
+
+\begin{saetning}{1.4.8}
+	Lad $A \in Mat_{n,n}(\mathbb{F})$. Følgende er ækvivalent:
+	\begin{enumerate}[(a)]
+		\item A er ikke singulær, altså invertibel.
+		\item Ligningen $A \vec{x} =0$ har kun løsningen $0$.
+		\item A er række ækvivalent til I.
+	\end{enumerate}
+\end{saetning}
+
+\begin{bevis}
+	\begin{description}
+		\item[$\textmd{(a)} \Ra \textmd{(b)}$]
+			Lad $\vec{z}$ være en løsning til $A \vec{x}=0$, så er
+			\[
+				\vec{z} = I \vec{z} = (A^{-1}A)\vec{z} = A^{-1}(Az)
+				= A^{-1}0 = 0
+			\]
+		\item[$\textmd{(b)} \Ra \textmd{(c)}$] Brug din fantasi.
+		\item[$\textmd{(c)} \Ra \textmd{(a)}$] Endnu mere magi.
+	\end{description}
+\end{bevis}

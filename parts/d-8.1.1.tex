@@ -1,0 +1,28 @@
+\begin{definition}{8.1.1}
+	For $A\in\mat_{n,n}(\mathbb{F})$ med $n \ge 2$ er den $(i,j)$'te
+	\emph{minor} $M(A)_{ij} \in \mat_{n-1,n-1}(\mathbb{F})$ dannet ved at
+	sløjfe den $i$'te søjle og $j$'te række.
+
+	\[
+		A_{ij} = \begin{bmatrix}
+			a_{1,1} & \dotso & \tikz[remember picture,overlay] \node (t1)[anchor=base] {$a_{1,i}$}; & \dotso & a_{1,n}\\
+			\vdots  &        & \vdots  &        & \vdots\\
+			\tikz[remember picture, overlay] \node (t3){$a_{j,1}$}; & \dotso & a_{j,i} & \dotso & \tikz[remember picture, overlay] \node (t4) {$a_{j,n}$};\\
+			\vdots  &        & \vdots  &        & \vdots\\
+			a_{n,1} & \dotso & \tikz[remember picture,overlay] \node (t2) {$a_{n,i}$}; & \dotso & a_{n,n}
+		\end{bmatrix}
+		\begin{tikzpicture}[overlay,remember picture]
+			\draw ([yshift=-1mm]t1.north) to ([yshift=2mm]t2.south);
+			\draw ([yshift=.5mm, xshift=1mm]t3.west) to ([yshift=0.5mm, xshift=-1mm]t4.east);
+		\end{tikzpicture}
+		=
+		\begin{bmatrix}
+			a_{1,1} & \dotso & a_{1,i-1} & a_{1, i+1} & \dotso & a_{1,n}\\
+			\vdots  &        & \vdots    & \vdots     &        & \vdots\\
+			a_{j-1,1} & \dotso & a_{j-1,i-1} & a_{j-1, i+1} & \dotso & a_{j-1,n}\\
+			a_{j+1,1} & \dotso & a_{j+1,i-1} & a_{j+1, i+1} & \dotso & a_{j+1,n}\\
+			\vdots  &        & \vdots    & \vdots     &        & \vdots\\
+			a_{n,1} & \dotso & a_{n,i-1} & a_{n, i+1} & \dotso & a_{n,n}
+		\end{bmatrix}
+	\]
+\end{definition}

@@ -1,0 +1,30 @@
+\begin{definition}{6.2.1}
+	Lad $V$ være et $\mathbb{C}$-vektorrum. Et (komplekst) indre produkt er en
+	afbildning $\langle\;,\:\rangle:\:V\;\times\;V\ra\mathbb{C}$, som
+	tilfredsstiller:
+	\begin{enumerate}[(I)]
+		\item $\langle\vec{v},\vec{v}\rangle$ er reel, og ikke-negativ for alle
+			$\vec{v} \in V$; og er 0 hhvis $v = 0$.
+		\item $\langle\vec{v},\vec{w}\rangle =
+			\ol{\langle\vec{w},\vec{v}\rangle}$ for alle $\vec{v},\vec{w} \in
+			V$.
+		\item $\langle\alpha\vec{v} + \beta\vec{w},\vec{z}\rangle
+			= \alpha\langle\vec{v},\vec{z}\rangle + \beta\langle\vec{w},\vec{z}
+			\rangle$ for alle $\alpha,\beta \in \mathbb{C},\;\vec{v},\vec{w},
+			\vec{z} \in V$.
+		\item $\langle\vec{v}, \beta\vec{w} + \alpha\vec{z}\rangle =
+			\ol{\alpha}\langle\vec{w},\vec{v}\rangle +
+			\ol{\beta}\langle\vec{z},\vec{v} \rangle$ for alle $\alpha,\beta
+			\in \mathbb{C},\;\vec{v},\vec{w}, \vec{z} \in V$.
+	\end{enumerate}
+	Associeret til det indre produkt er en \emph{længde} eller \emph{norm}
+	\[
+		\norm{\vec{v}} = \sqrt{\langle\vec{v},\vec{v}\rangle}\text{ for }
+		\vec{v} \in V
+	\]
+	(I) siger at $\norm{\vec{v}} = 0 \Leftrightarrow \vec{v} = \vec{0}$.
+
+	\noindent
+	Noter at $\norm{a\vec{v}} = \abs{a}\norm{\vec{v}}$ for alle 
+	$a \in \mathbb{C}$ og $\vec{v} \in V$.
+\end{definition}

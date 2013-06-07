@@ -1,0 +1,47 @@
+\newpage
+\chapter{Determinanter}
+([P] 8.1, 8.2)
+
+\section{Definition og Egenskaber}
+\input{parts/d-8.1.1}
+\input{parts/d-8.1.2}
+\begin{bemaerk}
+Der er en række basale regler for determinanter:
+\begin{itemize}
+	\item \emph{8.1.3}: Determinanten kan udvikles efter første \emph{søjle}:
+		$\det(A) = a_{11}A_{11} + \dotsb + a_{n1}A_{n1}$
+	\item \emph{8.1.4}: Hvis $B$ er $A$ med de første to rækker byttet om, så
+		er $\det A = -\det B$.
+	\item \emph{8.1.5}: Hvis $B$ er $A$ med to vilkårlige rækker byttet gælder
+		$\det A = -\det B$.
+	\item \emph{8.1.6}: Determinanten kan udvikles efter $k$'te række:
+		$\det(A) = a_{k1}A_{k1}+\dotsb+a_{kn}A_{kn}$.
+	\item \emph{8.1.8}: Hvis $B$ er $A$ med to søjler byttet, so er $\det(A)
+		= -\det(B)$.
+	\item \emph{8.1.9}: For $A\in\mat_{n,n}(\mathbb{F})$ og $n > 1$, hvis $A$
+		har to ens rækker/søjler gælder det at $\det(A) = 0$.
+	\item \emph{8.1.10/11 (a)}: Hvis $A$ har en nul-række/søjle er $\det(A) =
+		0$.
+	\item \emph{8.1.10/11 (b)}: Hvis $B$ er $A$ med $k$'te række/søjle gange
+		med $r$, så gælder $\det(B) = r\det(A)$
+	\item \emph{8.1.10/11 (c)}: Hvis $B$ er $A$ med $s$ gange $i$'te
+		række/søjle lagt til $j$'te række, $i \ne j$, så er $\det(A) =
+		\det(B)$.
+	\item \emph{8.1.12}: Hvis $A$ er triangulær, så er $\det(A)$ produktet af
+		$A$'s diagonalindgange.
+	\item \emph{8.1.13}: Hvis $E$ er elementærmatrix gælder $\det(EA) = \det(E)
+		\det(A)$. Deraf følger $\det(AE) = \det(E)\det(A)$.
+\end{itemize}
+\end{bemaerk}
+
+\section{Transponeret Matrix}
+\input{parts/l-8.1.7}
+
+\section{Singulære Matricer og Determinanter}
+
+\input{parts/s-8.1.15}
+
+\section{Cramers Regel}
+
+\input{parts/d-8.2.6}
+\input{parts/k-8.2.9}

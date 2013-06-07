@@ -1,0 +1,60 @@
+\begin{saetning}{5.1.17}
+	Lad $S \in \mathbb{R}^n$ være et underrum.
+	\begin{enumerate}
+		\item $S^\bot$ er også et underrum i $\mathbb{R}^n$ og $\dim(S^\bot) =
+			n - \dim(S)$.
+		\item Hvis $S \not= \{0\},\, S \not= \mathbb{R}^n$ og $\{\vec{x_1}, 
+			\dotsc, \vec{x_r}\}$ er en basis for $S$ og $\{\vec{x_{r+1}}, 
+			\dotsc, \vec{x_n}\}$ er en basis for $S^\bot$, så er $\{\vec{x_1}, 
+			\dotsc, \vec{x_n}\}$ en basis for $\mathbb{R}^n$.
+	\end{enumerate}
+\end{saetning}
+
+\begin{bevis}
+	\begin{enumerate}
+		\item Hvis $S = \{0\}$, og $S^\bot \in \mathbb{R}^n$, så følger det 
+			naturligt, at $\dim(S^\bot) = n - \dim(S) = n - \dim(\{0\})$.
+
+			Hvis $S \not= \{0\}$, lad da $\{\vec{x_1}, \dotsc, \vec{x_r}\}$ 
+			være en basis for $S$. Da kan vi skrive $X = [\vec{x_1}, \dotsc, 
+			\vec{x_r}]$, hvor $X \in \mat_{n,r}(\mathbb{R})$ er en matrix 
+			hvor søjlerne består af basis vektorerne.
+
+			Da må $S = S\text{ø}(X)$ og da giver lemma 5.1.16 at:
+			\[
+				S^\bot = S\text{ø}(X)^\bot = N(X^T)
+			\]
+			Hvor det gælder at $N(X^T) \in \mathbb{R}^n$. Da kan vi finde:
+			\[
+				\dim(N(X^T)) = \text{\#søjler i } X^T-\rang(X^T) = n-r = 
+				n - \dim(S)
+			\]
+			Dette fordi $X$ har $r$ uafhængige søjler per definition af basis, 
+			så:
+			\[
+				\rang(X^T) = \rang(X) = r = \dim(S\text{ø}(X)) = \dim(S)
+			\]
+		\item Ifølge \hyperlink{3.1.4}{sætning 3.1.4} skal vi blot vise at 
+			$\vec{x_1}, \dotsc, \vec{x_n}$ er uafhængige.
+			Vi antager derfor:
+			\[
+				c_1\vec{x_1} + \dotsc + c_r\vec{x_r} + c_{r+1}\vec{x_{r+1}} + 
+				\dotsc + c_n\vec{x_n} = 0
+			\]
+			Derpå lader vi vektoren $\vec{y} = c_1\vec{x_1} + \dotsc + 
+			c_r\vec{x_r}$ og vektoren $\vec{z} = c_{r+1}\vec{x_{r+1}} + 
+			\dotsc + c_n\vec{x_n}$. Da må $\vec{y} \in S$ og $\vec{z} \in 
+			S^\bot$, og $\vec{y} + \vec{z} = 0$.
+
+			Dette må betyde at $\vec{y} = (-1)\vec{z}$, hvilket vil sige at 
+			$\vec{y} \in S$ og $(-1)\vec{z} \in S^\bot$, altså må $\vec{y} = 
+			(-1)\vec{z} \in S \cap S^\bot$, hvilket giver at $\vec{y} = 
+			(-1)\vec{z} = 0$.
+
+			Da $c_1x_1 + \dotsc + c_rx_r = 0$, må alle $c_1, \dotsc, c_r = 0$,
+			da $x_1, \dotsc, x_r$ er uafhængige. Da $c_{r+1}x_{r+1} + \dotsc + 
+			c_nx_n = 0$, må alle $c_{r+1}, \dotsc, c_n = 0$, da $x_{r+1}, 
+			\dotsc, x_n$ er uafhængige. Så $x_1, \dotsc, x_n$ er uafhængige og
+			derfor en basis for $\mathbb{R}^n$.
+	\end{enumerate}
+\end{bevis}

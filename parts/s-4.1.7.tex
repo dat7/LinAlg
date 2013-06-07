@@ -1,0 +1,44 @@
+\begin{saetning}{4.1.7}
+	Lad $V,W$ være $\mathbb{F}$-vektorrum. Lad $L: V \ra W$ være en lineær
+	transformation.
+
+	\begin{enumerate}
+		\item Lad $S \subset V$ være et underrum. Da er $L(S)$ et underrum af 
+			$W$.
+		\item Lad $T \subset W$ være et underrum. Da er $L^{-1}(S)$ et underrum
+			af $V$.
+	\end{enumerate}
+\end{saetning}
+
+\begin{bevis}
+	Vi skal for begge vise alle
+	\hyperlink{def:underrum}{egenskaberne for underrum}.
+	\begin{enumerate}
+		\item Da $\vec{0}_W$ er $L(S) \ne \emptyset$
+
+			Lad $\vec{w}_1, \vec{w}_2 \in L(S)$, $\alpha_1, \alpha_2 \in \mathbb{F}$
+			
+			Det eksisterer et $\vec{s}_1, \vec{s}_2 \in S$ så
+			$L(\vec{s}_1)=\vec{w}_1$ og $L(\vec{s}_2)=\vec{w}_2$
+
+			Samtidig ved vi at $\alpha_1\vec{s}_1 + \alpha_2\vec{s}_2 \in S$,
+			og derfor:
+			$$
+			\alpha_1\vec{w}_1 + \alpha_2\vec{w}_2 = \alpha_1L(\vec{s}_1) +
+			\alpha_2L(\vec{s}_2) = L(\alpha_1\vec{s}_1 + \alpha_2\vec{s}_2)
+			\in S
+			$$
+		\item Det gælder som før at $\vec{0}_W = L^{-1}(T) \implies
+			L^{-1}(T) \ne \emptyset$
+
+			Lad $\vec{v}_1, \vec{v}_2 \in L^{-1}(T)$,
+			$\alpha_1, \alpha_2 \in \mathbb{F}$. Vi har
+			$$ L(\alpha_1\vec{v}_1 + \alpha_2\vec{v}_2) = L(\alpha_1\vec{v}_1)
+			+ L(\alpha_2\vec{v}_2) $$
+
+			Da $L(\vec{v}_1), L(\vec{v}_2) \in T$, er $\alpha_1 L(\vec{v}_1),
+			\alpha_2 L(\vec{v}_2) \in T$
+
+			Så $\alpha_1\vec{v}_1 + \alpha_2\vec{v}_2 \in L^{-1}(T)$.
+	\end{enumerate}
+\end{bevis}

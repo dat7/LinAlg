@@ -1,0 +1,119 @@
+\definecolor{c1}{RGB}{204,219,255}
+\definecolor{c2}{RGB}{219,255,204}
+\definecolor{c3}{RGB}{255,230,196}
+\definecolor{c4}{RGB}{240,204,255}
+\definecolor{c5}{RGB}{255,204,204}
+\definecolor{c6}{RGB}{255,245,185}
+\definecolor{g1}{gray}{0.9}
+
+\newcounter{defcounter}[chapter]
+%\newenvironment{generalEnvironment}[3]{%
+%	\noindent
+%	\adjustbox{innerenv={varwidth}[c]{\linewidth},margin=\fboxsep+.5cm
+%	\fboxsep+.3cm,bgcolor=#1,frame,center,vspace=1em}
+%	\bgroup
+%	{\sffamily\bfseries #2 \hfill #3}
+%	\vspace{0.9mm}\hrule\vspace{2mm}
+%		}{%
+%	\egroup
+%}
+
+% DEFINITION
+\newenvironment{definition}[1]{%
+	\begin{generalEnvironment}{c1}{Definition #1}
+	\bgroup
+		}{%
+	\egroup
+	\end{generalEnvironment}
+}
+
+% BEVIS
+\newenvironment{bevis}{%
+	\begin{generalEnvironment}{c2}{Bevis}
+		}{%
+	%{\hfill $\Box$}%
+	\end{generalEnvironment}
+}
+
+\newenvironment{saetning}[1]{%
+	\begin{generalEnvironment}{c3}{Sætning #1}
+	\bgroup
+		}{%
+	\egroup
+	\end{generalEnvironment}
+}
+
+\newenvironment{korollar}[1]{%
+	\begin{generalEnvironment}{c4}{Korollar #1}
+	\bgroup
+		}{%
+	\egroup
+	\end{generalEnvironment}
+}
+
+\newenvironment{proposition}[1]{%
+	\begin{generalEnvironment}{c5}{Proposition #1}
+	\bgroup
+		}{%
+	\egroup
+	\end{generalEnvironment}
+}
+
+\newenvironment{lemma}[1]{%
+	\begin{generalEnvironment}{c6}{Lemma #1}
+	\bgroup
+		}{%
+	\egroup
+	\end{generalEnvironment}
+}
+
+\newenvironment{notation}[1]{%
+	\begin{generalEnvironment}{c1}{Notation #1}
+	\bgroup
+		}{%
+	\egroup
+	\end{generalEnvironment}
+}
+
+\newenvironment{bemaerk}{%
+	\begin{generalEnvironment}{g1}{Bemærkning}
+	\bgroup
+		}{%
+	\egroup
+	\end{generalEnvironment}
+}
+
+\newenvironment{generalEnvironment}[2]
+	{
+		\mdfsetup{%
+		frametitle={\fcolorbox{#1}{#1}{\space#2\space}},
+		innertopmargin=0pt,
+		innerbottommargin=8pt,
+		frametitleaboveskip=-\ht\strutbox+7,
+		frametitlealignment=\center,
+		roundcorner=4pt,
+		linecolor=#1,
+		skipabove=10pt,
+		skipbelow=10pt,
+		middlelinewidth=2pt,
+		backgroundcolor=light-gray,
+		needspace=3cm
+		}%
+	\begin{mdframed}%
+}%
+{%
+	\end{mdframed}
+}
+
+%\newmdtheoremenv [ %
+%outerlinewidth = 2 ,%
+%%leftmargin = 40 ,%
+%%rightmargin = 40 ,%
+%backgroundcolor = c1 ,%
+%outerlinecolor = blue ,%
+%innertopmargin = \topskip ,%
+%splittopskip = \topskip ,%
+%ntheorem = false ,%
+%skipabove = \baselineskip ,%
+%skipbelow = \baselineskip ]
+%{proposition}{Theorem}[section]

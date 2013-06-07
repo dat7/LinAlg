@@ -1,0 +1,36 @@
+%
+% Sætning 11.1.10 (Spektralsætning for hermite'ske matricer, [L] 6.4.4) side 197
+%
+
+\begin{saetning}{11.1.10}
+	Lad $A \in \mat(\mathbb{C})$ være hermite'sk. Så kan $A$ diagonaliseres
+	unitært, det vil sige der findes en unitær matrix $U \in \mat(\mathbb{C})$
+	så
+	\[
+		U^{-1}AU=U^HAU
+	\]
+	er diagonal, med reelle diagonalindgange.
+\end{saetning}
+
+\begin{bevis}
+	Ifølge Schurs sætning findes der en unitær matrix $U \in \mat(\mathbb{C})$
+	så $U^HAU = T$ er en øvretrekantsmatrix. $T$ er hermite'sk da
+	\begin{equation}\label{eqn:11.1.10-1}
+		T^H = (U^HAU)^H = U^HA^H(U^H)^H = U^HAU = T
+	\end{equation}
+	Da $T$ er øvretriangulær må $T^H$ være nedretriangulær
+	\[
+		T = \begin{bmatrix}
+			t_{11} & \dots 	& t_{1n} \\
+				   & \ddots & \vdots \\
+			   0   & 		& t_{nn} \\
+		\end{bmatrix} \; , \; T^H = \begin{bmatrix}
+			\overline{t_{11}} & 	   &    0 \\
+				\vdots		  & \ddots &  \\
+			\overline{t_{1n}} & \dots  & \overline{t_{nn}} \\
+		\end{bmatrix}
+	\]
+	men (\ref{eqn:11.1.10-1}) siger også at $T^H = T$, så for $i \not= j$ er
+	$t_{ij} = 0$ og $t_{ii} = \overline{t_{ii}}$ for $i = 1,\dotsc,n$, hvilket
+	betyder at $T$ er diagonal med reelle indgange.
+\end{bevis}

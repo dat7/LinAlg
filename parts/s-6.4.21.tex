@@ -1,0 +1,40 @@
+\begin{saetning}{6.4.21}
+	Lad $Q \in \mat_{n,n}(\mathbb{R})$. Følgende udsagn er ækvivalente:
+	\begin{enumerate}[(a)]
+		\item $Q$ er ortogonal
+		\item $Q^TQ = I$
+		\item $Q$ er invertibel og $Q^{-1} = Q^T$
+		\item $(Q\vec{x})^T(Q\vec{y}) = \vec{x}^T\vec{y}$ for alle $\vec{x}, 
+			\vec{y} \in \mathbb{R}^n$
+		\item $\norm{Q\vec{x}} = \norm{\vec{x}}$ for alle $\vec{x} \in 
+			\mathbb{R}^n$
+	\end{enumerate}
+\end{saetning}
+
+\begin{bevis}
+	\begin{description}
+		\item[$(a)\Ra(b)$] følger fra Lemma 6.4.18, da søjlerne da må være en 
+			ortonormal mængde.
+		\item[$(b)\Ra(d)$] $(Q\vec{x})^T(Q\vec{y}) = \vec{x}^TQ^TQ\vec{y} = 
+			\vec{x}^T\vec{y}$ for alle $\vec{x}, \vec{y} \in \mathbb{R}^n$.
+		\item[$(d)\Ra(a)$] Vi kan opskrive $Q = [\vec{q_1}, \dotsc, \vec{q_n}]$
+			i søjleform. Der gælder at:
+			\[
+				\vec{q_i}^T\vec{q_j} = (Q\vec{e_i})^T(Q\vec{e_j}) = 
+				\vec{e_i}^T\vec{e_j} = \delta_{ij}
+			\]
+			hvor det gælder for $\delta_{ij}$:
+			\[
+				\delta_{ij} = \begin{cases}1 & i = j\\0 & i \not= j\end{cases}
+			\]
+			hvilket per definition gør at $\{q_1, \dotsc, q_n\}$ er ortonomal.
+		\item[$(b)\Ra(c)$] følger af Lemma 1.4.10, som siger at $AB = I$ så må
+			$A$ og $B$ være invertible.
+		\item[$(c)\Ra(b)$] følger af at være invers.
+		\item[$(d)\Ra(e)$] $\norm{Q\vec{x}}^2 = (Q\vec{x})^TQ\vec{x} = 
+			\vec{x}^T\vec{x} = \norm{\vec{x}}^2$.
+		\item[$(e)\Ra(d)$] følger af propertition 6.3.5, hvor 
+			$\vec{x}^T\vec{y}$ og $(Q\vec{x})^T(Q\vec{y})$ kan omskrives 
+			således at det passer.
+	\end{description}
+\end{bevis}

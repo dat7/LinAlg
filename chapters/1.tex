@@ -1,0 +1,101 @@
+\newpage
+\chapter{Løsninger og mindste kvadraters løsninger af lineære ligningssystemer}
+([P] 1.2, 5.2, 7.2.10-7.2.13, 8.2.9)
+
+\section*{Disposition}
+\begin{enumerate}
+	\item Lineær Ligningssystem
+	\item \sout{Rækkeækvivalens}
+	\item ERO'er
+	\item REF \& RREF
+	\item Konsistens i Ligningssystemer
+	\item Mindste Kvadraters Løsninger
+\end{enumerate}
+
+\section{Lineære Ligningssystemer}
+
+\kbox{Eventuelt finde bevis der passer til lineære liningssystemer og måske
+	definere hvad søjlerum og nulrum er.}
+
+\subsection{Definition}
+Et lineært ligningssystem er et system af $m$ ligninger i $n$ ubekendte, hvor 
+disse kan skrives som:
+
+\begin{align*}
+	a_{1,1}x_1 + \dots + a_{1,n}x_n & = b_1\\
+									& \vdots \\
+	a_{m,1}x_1 + \dots + a_{m,n}x_n & = b_m
+\end{align*}
+Et sådan system kan også opstilles på matrix form, hvor $A$ er en matrix, $x$
+og $b$ er vektorer:
+\[
+	Ax = b
+\]
+Systemet løses ved at indsætte $c_1, \dots, c_n$ på $x$ plads, så begge sider
+af ligheden af den samme, altså er vektoren $c$ en del af løsningsmængden.
+
+\section{Rækkeækvivalens}
+
+Hvis løsningsmængden for et ligningssystem $Ax = b$ og $Cx = d$ er ens, altså
+de har de samme $x$, kan $A$ og $C$ siges at være rækkeækvivalente.
+Sammenhængen mellem $A$ og $C$ vil da være at der er blevet benyttet en række
+\textit{ERO'er} på $A$ for at danne $C$.
+
+\subsection{ERO'er}
+Der er 3 elementære rækkeoperationer, som kan bruges til at manipulere med
+ligningssystemer.
+
+\begin{enumerate}
+	\item $R_i \Leftrightarrow R_j$: byt den $i$'te og den $j$'te ligning.
+	\item $R_i \Rightarrow sR_i$: gang den $i$'te ligning med $s \in 
+		\mathbb{F} \bs \{0\}$
+	\item $R_i \Rightarrow R_i+tR_j$: addér $t$ gange $R_j$ til $R_i$ når $t 
+		\in \mathbb{F}, j \not= i$.
+\end{enumerate}
+
+
+\section{REF \& RREF}
+\subsection{REF}
+Række Echelon From, er en bestemt form, som en matrix kan komme på. Dette ved 
+hjælp af \textit{ERO'er}. Formen er som følger:
+
+\begin{enumerate}
+	\item Nulrækker, ligger nederst i matricen.
+	\item Den første ikke-nulindgang i en række er 1 og ligger til højre for
+		den første ikke-nulindgang i rækken ovenover.
+\end{enumerate}
+Den første ikke-nulindgang på en række i en REF-matrix, kaldes en 
+\textit{pivot}.
+
+\subsection{RREF}
+En matrix er på RREF (Reduceret Række Echelon Form), hvis den er på REF, og 
+alle søjler som indeholder en pivot har 0 på alle andre indgange.
+
+\section{Konsistens i Ligningssystemer}
+\input{parts/l-2.2.4}
+
+\section{Mindste Kvadraters Løsninger}
+En mindste kvadraters løsning er hvor man finder den bedst mulige løsning, til
+et ligningssystem med flere ligninger end ubekendte. Generelt kan det beskrives
+som $Ax=b$ hvor $A \in Mat_{m,n}(\mathbb{R})$ med $m>n$. 
+
+Generelt kan det ikke forventes at man kan finde et $x \in \mathbb{R}^n$ som
+løser ligningssystemet, hvilket gør at man leder efter et $z \in \mathbb{R}^n$
+som får $Az$ til at være tættest på $b \in \mathbb{R}^m$.
+
+\input{diagrams/least-squares}
+
+Hvis man har ovenstående ligningssystem kan man finde et residual
+\[
+	r(x) = b - Ax
+\]
+som er den ``overskydende'' afstand mellem den bedste løsning og punkterne. Vi
+søger derfor at finde den den mindste længde, $\norm{r(x)}$, for residualet, hvilket
+er det samme som at søge den mindst mulige løsning til $\norm{r(x)}^2$. En vektor
+$\hat{x}$ der opfylder dette, siges at være en mindste kvadraters løsning for
+$Ax = b$ og $p = A\hat{x}$, hvilket gør $p \in S\text{ø}(A)$, der er tættest på
+$b$.
+
+\input{parts/p-5.2.2}
+\input{parts/p-5.2.4}
+

@@ -1,0 +1,44 @@
+\begin{lemma}{9.2.5}
+	Lad $A \in \mat_{n,n}(\mathbb{F})$. Antag at $\lambda_1, \cdots, \lambda_k$
+	er forskellige egenværdier for $A$. Lad $v_1, \cdots, v_k$ være tilsvarende
+	egenvektorer. Så er $v_1, \cdots, v_k$ uafhængige.
+\end{lemma}
+\begin{bevis}
+	Lad $S = \spn(\vec{v_1}, \cdots, \vec{v_k})$ og lad $r = dim(S)$. Vi skal 
+	så vise at $r = k$. Vi antager modsætningsvis at $r < k$, ydermere antager 
+	vi da at $\vec{v_1}, \cdots, \vec{v_r}$ er en basis for $S$. Da må en 
+	ny egenvektor $\vec{v_{r+1}}$ kunne skrives som en lineær kombination af 
+	$\vec{v_1}, \cdots, \vec{v_r}$.
+	\[
+		\vec{v_{r+1}} = c_1\vec{v_1} + \cdots + c_r\vec{v_r}\text{, hvor } 
+		c_1, \cdots, c_r \in \mathbb{F}
+	\]
+	Så vi kan skrive:
+	\[
+		A\vec{v_{r+1}} = A(c_1\vec{v_1}+ \cdots + c_r\vec{v_r}) = 
+		c_1A\vec{v_1} + \cdots + c_rA\vec{v_r}
+	\]
+	Da vi ved at $A\vec{v} = \lambda \vec{v}$ kan vi omskrive dette til:
+	\[
+		A\vec{v_{r+1}} = \lambda_{r+1}\vec{v_{r+1}} = c_1\lambda_1\vec{v_1} + 
+		\cdots + c_r\lambda_r\vec{v_r}
+	\]
+	Ganger vi så den første ligning med $\lambda_{r+1}$ og trækker det fra den
+	sidste, så får vi:
+	\[
+		0 = c_1(\lambda_1-\lambda_{r+1})\vec{v_1} + \dotso + 
+		c_r(\lambda_r-\lambda_{r+1})\vec{v_r}
+	\]
+	Da vi ved at $\vec{v_1}, \dotsc, \vec{v_r}$ er en basis for $S$ må disse
+	være uafhænigige og derfor ikke 0.
+	
+	Ydermere ved vi per antagelse at alle $\lambda$ er forskellige, hvilket vil
+	sige at $\lambda_i-\lambda_{r+1}$ er forskellig fra 0 for alle $i = 1,
+	\dotsc, r$. 
+	
+	Derfor må det være konstanterne $c_1, \dotsc, c_n$ der alle må være 0, for
+	at ovenstående ligning kan opfyldes. Men da egenvektoren $\vec{v_{r+1}}$
+	ikke kan være nul, er dette en modstrid med den første ligning, og derfor
+	må vores første antagelse være forkert, og dermed må $r = k$, der gør at
+	$\vec{v_1}, \dotsc, \vec{v_k}$ alle må være uafhængige.
+\end{bevis}

@@ -1,0 +1,31 @@
+\begin{saetning}{2.2.15}
+	Lad $V = \spn(v_1, \dots\ v_n)$ være et $\mathbb{F}$-vektorrum. Lad 
+	$u_1, \dots, u_m \in V$, hvor $m > n$. Så er $u_1, \dots, u_m$ afhængige.
+\end{saetning}
+
+\begin{bevis}
+	Vi kan opstille hver af $u_i$'erne som en lineær kombination af $V$ for 
+	$i = 1, \dots, m$.
+	\[
+		u_i = a_{1i}v_1 + \dots + a_{ni}v_n\text{, hvor }a_{1i}, \dots, a_{ni} 
+		\in \mathbb{F}
+	\]
+	Samtidig kan vi opstille en lineær kombination af alle $u_i'er$ og omskrive
+	denne til at være en sum af de ovenstående lineære kombinationer.
+	\begin{align*}	
+		0 = U &= x_1u_1 + \dots + x_nu_n \\
+		&= \sum_{i=1}^mx_i(\sum_{j=1}^na_{ji}v_j) \\
+		&= \sum_{j=1}^n(\sum_{i=1}^ma_{ji}x_i)v_j
+	\end{align*}
+	Vi ved at $v_1, \dots, v_n$ ikke er 0, da disse er baser. Derfor må 
+	$\sum_{j=1}^n(\sum_{i=1}^ma_{ji}x_i) = 0$. Dette kan opstilles som et 
+	ligningssystem der har $n$ ligninger og $m$ ubekendte:
+	\begin{align*}
+		x_1a_{11} + &\dots + x_ma_{1m} \\
+					&\ \ \vdots \\
+		x_1a_{n1} + &\dots + x_ma_{nm}
+	\end{align*}
+	Per \hyperlink{1.2.13}{korollar 1.2.13}, ved vi at et sådan ligningssystem
+	må have en ikke triviel løsning, og per definitionen af lineær afhængighed,
+	ved vi da at vektorerne $u_1, \dots, u_m$ må være lineært afhængige.
+\end{bevis}

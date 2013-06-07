@@ -1,0 +1,103 @@
+\begin{saetning}{11.1.9 (Schurs Sætning)}
+	Lad $A\in \mat_{n,n}(\mathbb{C})$. Der findes en unitær matrix $U\in \mat_{
+	n,n}(\mathbb{C})$, så $U^HAU$ er en øvretriangulær matrix.
+\end{saetning}
+
+\begin{bevis}
+	\setlength{\parindent}{0cm}
+	Beviset foregår ved induktion over $n$. I basen $n=1$ er det trivielt
+	opfyldt, da alle matricer $\in \mat_{1,1}$ er øvre triangulære.
+	
+	\noindent
+	Antag nu at det gælder for en matrix $B \in \mat_{n-1,n-1}(\mathbb{C})$.
+	
+	Lad $A\in \mat_{n,n}(\mathbb{B})$ med en egenværdi $\lambda_1 \in
+	\mathbb{C}$, og en tilhørende egenvektor $\vec{v}_1 \in \mathbb{C}^n$.
+
+	Vi kan arrangere at $\norm{\vec{v}_1} = 1$. Og vi kan udvide
+	$\{\vec{v}_1\}$ til en basis for $\mathbb{C}^n$, og ved at anvende
+	Gram-Schmidt på denne basis, får vi en ortonormalbasis $\{\vec{v}_1, \dotsc
+	,\vec{v}_n\}$ for $\mathbb{C}^n$.
+
+	Vi lader $U_1 = [\vec{v}_1, \dotsc, \vec{v}_n] \in \mat_{n,n}(\mathbb{C})$,
+	hvilket gør $U_1$ unitær.
+
+	Vi vil nu forsøge at afgøre opbygningen af den første søjle i $U_1^HAU_1$.
+	Dette kan vi gøre ved at gange med $\vec{e}_1$:
+	\[
+		U_1^HAU_1\vec{e}_1
+		= U_1^HA\vec{v}_1
+		= U_1^H\lambda_1\vec{v}_1
+		= \lambda_1U_1\vec{v}_1
+		= \lambda_1U_1^HU_1\vec{e}_1
+		= \lambda_1\vec{e}_1
+	\]
+
+	Vi ved derfor at første i $U_1^HAU_1$ er på formen $(\lambda_1, 0,
+	\dotsc,0)^T$, og kan derfor skrive $U_1^HAU_1$ som
+	\[
+		U_1^HAU_1 = \begin{bmatrix}
+			\lambda_1 & \vec{r}\\
+			\vec{0}   & A_1
+		\end{bmatrix}
+	\]
+
+	Her er $\vec{r}$ en rækkevektor og $\vec{0}$ en søjlevektor, begge med
+	$n-1$ indgange, og $A_1$ er defineret som minoren $M(A)_{1,1}$.
+	
+	Per induktionshypotesen findes der en unitær matrix $C \in \mat_{n-1,n-1}$
+	der opfylder $C^HA_1C=B$, så $B$ er en øvre triangulær matrix $\in
+	\mat_{n-1,n-1}(\mathbb{C})$.
+
+	Vi definerer
+	\[
+		U_2 = \begin{bmatrix}
+			1       & \vec{0}^T\\
+			\vec{0} & C
+		\end{bmatrix}
+	\]
+	hvor $0$ igen er en søjlevektor med $n-1$ indgange.
+
+	$U_2$ er unitær, da de sidste $n-1$ søjler udgør en ortonormal mængde, per
+	definition, og hver for sig er ortogonale på $(U_2)_{:1}$, som er lig 
+	enhedsvektoren $e_1$.
+
+	Ifølge lemma 11.1.16 er $U=U_1U_2$ ogås unitær.
+
+	Da $U_1^HAU_1$ og $U_2$ har samme former ($n \times n$), kan vi udregne
+	$U_2^H(U_1^HAU_1)U_2$ ved direkte brug af matrix-regler
+	\begin{align*}
+		U^HAU &= U_2^H(U_1^HAU_1)U_2\\
+		&= \begin{bmatrix}
+			1 & \vec{0}^T\\
+			\vec{0} & C^H
+		\end{bmatrix}
+		\begin{bmatrix}
+			\lambda_1 & \vec{r}\\
+			\vec{0}   & A_1
+		\end{bmatrix}
+		\begin{bmatrix}
+			1 & \vec{0}^T\\
+			\vec{0} & C
+		\end{bmatrix}\\
+		&= \begin{bmatrix}
+			\lambda_1 & \vec{r}\\
+			\vec{0}   & C^HA_1
+		\end{bmatrix}
+		\begin{bmatrix}
+			1 & \vec{0}^T\\
+			\vec{0} & C
+		\end{bmatrix}\\
+		&= \begin{bmatrix}
+			\lambda_1 & \vec{r}C\\
+			\vec{0}   & C^HA_1C
+		\end{bmatrix}\\
+		&= \begin{bmatrix}
+			\lambda_1 & \vec{r}C\\
+			\vec{0}   & B
+		\end{bmatrix}
+	\end{align*}
+	Som er øvre triangulær fordi $B$ er det.
+
+	Induktionsskridtet er derfor taget, og sætningen er bevist.
+\end{bevis}

@@ -1,0 +1,38 @@
+\begin{saetning}{3.1.4}
+	Lad $\mathit{V}$ være et $\mathbb{F}$-vektorrum af $\dim\mathit{V} = n$,
+	for n > 0.
+
+	\begin{enumerate}
+		\itemsep -0.1em
+		\item Enhver mængde af $n$ uafhængige vektorer fra $\mathit{V}$ 
+			udspænder $\mathit{V}$, og er derfor en basis.
+		\item Enhver mængde af $n$ vektorer, som udspænder $\mathit{V}$, består
+			af uafhængige vektorer, og er derfor en basis.
+	\end{enumerate}
+\end{saetning}
+
+\begin{bevis}
+	\begin{enumerate}
+		\item Antag at $v_1, \ldots, v_n \in \mathit{V}$ er uafhængige, og lad
+			$v \in \mathit{V}$ være et vilkårligt element i $\mathit{V}$.
+			Ifølge 2.2.15 er de $n + 1$ vektorer $v, v_1, \ldots, v_n$
+			afhængige. Altså må der findes en
+			ikke-triviel løsning til
+			\[cv + c_1v_1 + \cdots + c_nv_n = 0\]
+			Hvor $c \ne 0$, da der ellers ville være en ikke-triviel løsning
+			til $c_1v_1 + \cdots + c_nv_n = 0$.
+			Derfor kan vi skrive v som
+			\[v = (-c_1c^{-1})v_1 + \cdots + (-c_nc^{-1})v_n \in \spn(v_1,
+			\ldots, v_n)\]
+			Så er $\mathit{V} = \spn(v_1, \ldots, v_n)$.
+		\item Antag at $v_1, \ldots, v_n$ udspænder $\mathit{V}$ og at
+			vektorerne er afhængige.  I så fald, kan en af dem skrives som en
+			lineær kombination af de andre: $v_n = c_1v_1 + \ldots +
+			c_{n-1}v_{n-1}$, hvilket vil sige at $v_1, \ldots, v_{n-1}$ må
+			udspænde $\textit{V}$.  Samtidig må $u_1, \ldots, u_n$ være en
+			basis for $\mathit{V}$, da den er udspændt af $n$ vektorer. Per
+			\hyperlink{2.2.15}{sætning 2.2.15}, må $u_1, \ldots, u_n$ være afhængige, hvilket
+			er en modstrid til definitionen på en basis. Så $v_1, \ldots, v_n$
+			kan ikke være afhængige.
+	\end{enumerate}
+\end{bevis}

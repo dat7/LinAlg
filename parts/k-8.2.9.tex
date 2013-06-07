@@ -1,0 +1,27 @@
+\begin{korollar}{8.2.9}
+	Lad $A \in \mat_{n,n}(\mathbb{F})$ være invertibel, og lad $\vec{b} \in 
+	\mathbb{F}^n$.
+	Lad $A_i$ være matricen, der fås ved at erstatte den $i$'te søjle i $A$ med
+	$\vec{b}$. Den entydige løsning $\hat{x}$ til $A\vec{x} = \vec{b}$ er da 
+	givet ved:
+	\[
+		\hat{x}_i = \frac{\det(A_i)}{\det(A)}, i = 1, \cdots, n
+	\]
+\end{korollar}
+
+\begin{bevis}
+	Hvis vi ombytter lidt på ligningssystemet $A\vec{x} = \vec{b}$, får vi at
+	$\vec{x} = A^{-1}\vec{b}$. Dette kan vi ved hjælp at Korrolar 8.2.8 
+	omskrive:
+	\[
+		\vec{\hat{x}} = A^{-1}\vec{b} = \frac{1}{\det(A)}adj(A)\vec{b}
+	\]
+	hvor $\hat{\vec{x}} = \begin{bmatrix}\hat{x}_1\\ \vdots \\ \hat{x}_n 
+	\end{bmatrix}$, og derfor må det gælde at for $i = 1, \cdots, n$:
+	\begin{align*}
+		\hat{\vec{x}}_i	&= \frac{1}{\det(A)}(\text{adj }A)_{:i}\vec{b}\\
+						&= \frac{1}{\det(A)}(A_{1i}b_1 + \cdots + A_{ni}b_n)\\
+						&= \frac{1}{\det(A)}\det(A_i)\\
+						&= \frac{\det(A_i)}{\det(A)}
+	\end{align*}
+\end{bevis}

@@ -1,0 +1,17 @@
+\begin{saetning}{6.4.8}
+	For $\{\vec{u}_1, \dotsc, \vec{u}_n\}$ som en ortonormal mængde i $V$.
+
+	\noindent
+	Hvis $\vec{v} = c_1\vec{u}_1 + \dotsb + c_n\vec{u}_n$, så er $c_i = \langle
+	\vec{v},\vec{u}_i\rangle$.
+\end{saetning}
+
+\begin{bevis}
+	$$\langle\vec{v},\vec{u}_i\rangle = \langle \sum_{j=1}^n
+	c_j\vec{u}_j,\vec{u}_i\rangle
+	= \sum_{j=1}^nc_j\langle\vec{u}_j, \vec{u}_i\rangle
+	= c_i$$
+	Det sidste gælder da for $i\ne j$ gælder der at $\langle\vec{u}_i,
+	\vec{u}_j\rangle = 0$, og $\langle\vec{u}_i, \vec{u}_i\rangle = 1$, da det
+	er en ortonormal basis.
+\end{bevis}

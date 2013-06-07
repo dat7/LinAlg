@@ -1,0 +1,112 @@
+\begin{saetning}{7.2.1 (Gram-Schmidt processen)}
+	Lad $V$ være et indre-produkt rum, og skriv $\inpro{}{}$ for
+	indre-produkt.
+
+	\noindent
+	Lad ydermere $\{\vec{x}_1, \dotsc, \vec{x}_n\}$ være en
+	basis for $V$.
+
+	\noindent
+	$\{\vec{u}_1, \dotsc, \vec{u}_n\}$ er en ortonormal basis for $V$ lavet på
+	følgende måde:
+	\[
+		\vec{u}_1 = \frac{1}{\norm{\vec{x}_1}}\vec{x}_1
+	\]
+	Og $\vec{u}_2\,\dotsc,\vec{u}_n$ er defineret rekursivt ved
+	\[
+		\vec{u}_{k+1} = \frac{1}{\norm{\vec{x}_{k+1} - \vec{p}_k}}(\vec{x}_{k+1} -\vec{p}_k)
+	\]
+	hvor
+	\[
+		\vec{p}_k = \inpro{\vec{x}_{k+1}}{\vec{u}_1}\vec{u}_1 + \dotsb +
+		\inpro{\vec{x}_{k+1}}{\vec{u}_k}\vec{u}_k
+	\]
+	er den ortogonale projektion af $\vec{x}_{k+1}$ på $\spn(\vec{u}_1,\dotsc,
+	\vec{u}_k)$.
+
+	\noindent
+	Da er $\{\vec{u}_1, \dotsc, \vec{u}_k\}$ er en ortonormal basis for
+	$\spn(\vec{x}_1, \dotsc, \vec{x}_k)$, for $k = 1, \dotsc, n$. 
+	
+	\noindent
+	Og dermed for $k = n$, en ortonormal basis for $V$.
+\end{saetning}
+
+\begin{bevis}
+	Definer $S_k = \spn(\vec{x}_1,\dotsc,\vec{x}_k)$ for $k = 1,\dotsc,n$.
+
+	\noindent
+	\emph{Basis:} For $S_1$ er det klart at $\spn(\vec{u}_1) = \spn(\vec{x}_1)
+	= S_1$.
+
+	\noindent
+	\emph{Induktion:} Antag nu at det er vist for $\vec{u}_1,\dotsc,\vec{u}_k$,
+	for $k < n$, og $\{\vec{u}_1, \dotsc, \vec{u}_k\}$ er en ortonormal basis
+	for $S_k$.
+	
+	\noindent
+	Lad $\vec{p}_k$ være projektionen af $\vec{x}_{k+1}$ på $S_k$. Ifølge 
+	\hyperlink{6.1.14}{sætning 6.1.14} kan denne skrives som
+	\[
+		\vec{p}_k = \inpro{\vec{x}_{k+1}}{\vec{u}_1}\vec{u}_1 + \dotsb
+		+ \inpro{\vec{x}_{k+1}}{\vec{u}_k}\vec{u}_k
+	\]
+	Da $\vec{p}_k \in S_k$, kan $\vec{p}_k$ skrives som en linearkombination
+	af $\vec{x}_1,\dotsc,\vec{x}_k$:
+	\[
+		\vec{p}_k = c_1\vec{x}_1 + \dotsb + c_k\vec{x}_k
+	\]
+	Vi vil gerne have fat i den ortogonale vektor $\vec{x}_{k+1} - \vec{p}_k$,
+	som går ud af $S_k$:
+	\[
+		\vec{x}_{k+1} - \vec{p}_k =
+		\vec{x}_{k+1} - c_1\vec{x}_1 - \dotsb - c_k\vec{x}_k
+	\]
+	Da vi ved at $\vec{x}_1, \dotsc, \vec{x}_{k+1}$ er uafhængige og
+	$c_1,\dotsc,c_k \ne 0$, ved vi at $\vec{x}_{k+1} - \vec{p}_k \ne 0$.
+
+	\noindent
+	Vi ved at
+	\[
+		\vec{x}_{k+1} - \vec{p}_k \in \spn(\vec{x}_1,\dotsc,\vec{x}_{k+1})
+		= S_{k+1}
+	\]
+	Og ifølge \hyperlink{6.1.14}{sætning 6.1.14} er 
+	$$\vec{x}_{k+1} -
+	\vec{p}_{k} \in S_k^\bot$$ 
+	og derfor $$(\vec{x}_{k+1} -
+	\vec{p}_k)\bot\vec{u}_i$$ 
+	for $i = 1,\dotsc,k$.
+
+	\noindent
+	Vi kan nu skalere den ortogonale projektion og definere $\vec{u}_{k+1}$:
+	\[
+		\vec{u}_{k+1} = \frac{1}{\norm{\vec{x}_{k+1} -\vec{p}_k}}(\vec{x}_{k+1}
+		-\vec{p}_k)
+	\]
+	Så er $\{\vec{u}_1,\dotsc,\vec{u}_{k+1}\} \in S_{k+1}$ og ortonormal.
+	
+	\noindent
+	Da der er $k+1$ uafhængige elementer i rummet $S_{k+1}$, udgør de en basis,
+	og $\{\vec{u}_1,\dotsc,\vec{u}_{k+1}\}$ er en ortogonal basis for
+	$S_{k+1}$.
+
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+		\usetikzlibrary{decorations.pathreplacing}
+		\coordinate (c0) at (0,0);
+		\coordinate (x1) at (3,1);
+		\coordinate (x2) at (4,0);
+		\coordinate (p)  at (3,0);
+		%\draw[fill,blue!10] (-.2,-.5) rectangle (4.5,1.5);
+
+		%\node[below left] at (c0) {$0,0$};
+		\draw[red!80,->] (c0) -- node[at end,above]{\footnotesize $\vec{x}_{k+1}$} (x1);
+		\draw[blue!80,->] (c0) -- node[at end,below]{\footnotesize $S_{k}$} (x2);
+		\draw[black,loosely dashed,->] (c0) -- node[near end,below]{\footnotesize $\vec{p}$} (p);
+		\draw[black!80,->] (p) -- node[anchor=left base, right]{\footnotesize $\vec{x}_{k+1} - \vec{p}$} (x1);
+
+		\draw[decorate,decoration={brace,amplitude=5pt,mirror}] (c0) -- node[below,yshift=-3pt]{\footnotesize $\vec{u}_1$} (1,0);
+	\end{tikzpicture}
+	\end{center}
+\end{bevis}

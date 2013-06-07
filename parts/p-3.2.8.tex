@@ -1,0 +1,25 @@
+\begin{proposition}{3.2.8}
+	Lad $A\in \mat_{m,n}(\mathbb{F})$, lad $A\sim U$ på REF.
+	\begin{enumerate}[(1)]
+		\item $\dim N(A) =$ \# af søjler uden pivot i $U$.
+		\item $\dim \row{A} =$ \# af ikke nul-rækker i $U$.
+		\item $\dim \sor{A} =$ \# af søjler med pivot i $U$.
+	\end{enumerate}
+	Det gælder at $\dim(\row{A}) = \dim(\sor{A})$, samt at $\dim N(A) + \dim
+	\sor{A} = n$, antallet af søjler i $A$.
+\end{proposition}
+
+\begin{bevis}
+	(1),(2),(3) følger fra $3.2.1 \ra 3.1.6$.
+
+	\noindent
+	Da antallet af ikke-nul rækker i $U$ er lig antallet af pivot'er,
+	er $\dim\row{A} = \dim\sor{A}$.
+
+	\noindent
+	Hvis $k$ er antallet af søjler med pivot, er $\dim N(A)) = n - k$. 
+	$\dim \sor{A} = k$ og
+	\[
+		\dim N(A) + \dim\sor{A} = (n - k) + k = n
+	\]
+\end{bevis}

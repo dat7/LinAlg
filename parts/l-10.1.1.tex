@@ -1,0 +1,58 @@
+\begin{lemma}{10.1.1}
+	Lad $\lambda, a \in \mathbb{C}$. Ligningen
+	\[
+		x' = \lambda x\tag{$\Diamond$}
+	\]
+	har en en entydig løsning $z:\mathbb{R}\ra\mathbb{C}$
+	med $z(0) = a$ givet ved $z(t) = e^{\lambda t}a$
+\end{lemma}
+
+\begin{bevis}
+	\setlength{\parindent}{0cm}
+	Vi ved at $\lambda$ er på formen $c + id$. Det kan vi sætte ind i
+	$e^{\lambda t}$ og differentiere:
+
+	\newcommand{\dif}{\frac{d}{dt}}
+	\begin{align*}
+		\dif e^{\lambda t} &= \dif e^{(c + id)t}\\
+		&= \dif e^{ct + idt}\\
+		&= \dif e^{ct}e^{idt}\\
+		&= \dif e^{ct}(\cos(dt) + i\sin(dt))\\
+		&= ce^{ct}(\cos(dt) + i\sin(dt)) + e^{ct}(-d\sin(dt) + id\cos(dt))\\
+		&= ce^{ct}(\cos(dt) + i\sin(dt)) + ide^{ct}(i\sin(dt) + \cos(dt))\\
+		&= (c + id)e^{ct}(\cos(dt) + i\sin(dt))\\
+		&= (c + id)e^{ct}e^{idt}\\
+		&= (c + id)e^{ct + idt}\\
+		&= (c + id)e^{(c + id)t}\\
+		&= \lambda e^{\lambda t}\\
+	\end{align*}
+	Altså er $z'(t) = \lambda e^{\lambda t}a = \lambda z(t)$, og $z(t)$ er
+	derfor en løsning til $(\Diamond)$. Og det er klart at $z(0) =a$.
+
+	For at vise at alle løsninger er på samme form som $z(t)$ kan vi lade
+	$y:\mathbb{R} \ra \mathbb{C}$ være en løsning til $x' = \lambda x$, med
+	$y(0) = a$.
+
+	Så har vi at
+	\begin{align*}
+		\dif(e^{-\lambda t}y(t)) &= -\lambda e^{-\lambda t}y(t) + e^{-\lambda t}y'(t)\\
+		&= e^{-\lambda t}(y'(t) - \lambda y(t))\tag{$\star$}\\
+		&= 0
+	\end{align*}
+
+	Hvilket giver os at $e^{-\lambda t}y(t)$ er konstant. Som kun kan ske hvis
+	$y(t)$ er invers til $e^{-\lambda t}$, nemlig på formen $e^{\lambda t}$.
+	Bemærk at $(\star)$ følger af $y'(t) = \lambda y(t)$. 
+	
+	Vi er også givet for $t = 0$ at
+	\[
+		e^{-\lambda t}y(t) = e^{-\lambda 0}y(0) = y(0) = a
+	\]
+
+	Derfor 
+	\[
+		y(t) = e^{\lambda t}a = z(t)
+	\]
+
+	$z(t)$ er altså den entydige løsning til $(\Diamond)$ med $z(0) = a$.
+\end{bevis}

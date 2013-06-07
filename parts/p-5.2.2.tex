@@ -1,0 +1,29 @@
+\begin{proposition}{5.2.2}
+	Der er et unikt $p \in \so (A)$ som er tættest på $b$. Altså
+	\[
+		\norm{b-y} > \norm{b-p}
+	\]
+	hvor $y, p \in \so(A)$ og $y \not= p$.
+\end{proposition}
+
+\begin{bevis}
+	Beviset for at $p$ er unik er som følger. Enhver vektor $b \in
+	\mathbb{R}^m$ kan beskrives som
+	\[
+		b = p + z
+	\]
+	hvor $p \in \so(A)$ og $z \in (\so(A))^\bot$. Givet en vektor $y \in
+	\so(A)$ forskellig fra $p$ gælder
+	\[
+		\norm{b-y}^2 = \norm{(b-p)+(p-y)}^2
+	\]
+	\input{diagrams/least-squares-pyth}
+	da $p-y \in \so(A)$ og $b-p = z \in (\so(A))^\bot$ så får vi fra Pythagoras
+	\[
+		\norm{b-y}^2 = \norm{b-p}^2 + \norm{p-y}^2
+	\]
+	og vi kan derfor konkludere at
+	\[
+		\norm{b-y} > \norm{b-p}
+	\]
+\end{bevis}

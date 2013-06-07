@@ -1,0 +1,71 @@
+\begin{lemma}{9.1.16}
+	Lad $A, B$ være similære.
+	\begin{enumerate}[1.]
+		\item $\mathit{p}_A = \mathit{p}_B$.
+		\item Hvis $\lambda_0$ er en egenværdi for $A$ og $B$, så er 
+			$\geo{A}(\lambda_0) = \geo{B}(\lambda_0)$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{bevis}
+	\begin{enumerate}[1.]
+		\item Der eksisterer en ikke singulær $S \in \mat_{n,n}(\mathbb{F})$
+			så $B = S^{-1}AS$. For et vilkårligt $\lambda$ gælder det at
+			\[
+				S^{-1}(A- \lambda I)S = (S^{-1}AS) - (S^{-1}\lambda S) = B - \lambda I
+			\]
+			Derfor
+			\begin{align*}
+				\mathit{p}_B(\lambda) &= \det(B-\lambda I)\\
+				&= \det(S^{-1}(A-\lambda I)S)\\
+				&= \det(S^{-1}\det(A-\lambda I)\det(S)\\
+				&= \det(S^{-1}\det(S)\det(A - \lambda I)\\
+				&= \det(S^{-1}S)\det(A - \lambda I)\\
+				&= \det(A - \lambda I)\\
+				&= \mathit{p}_A(\lambda)
+			\end{align*}
+		\item Lad $\{\vec{v}_1, \dotsc, \vec{v}_k\}$ være en basis for 
+		$N(A-\lambda_0I)$. Så har vi for $i = 1,\dotsc,n$
+		\begin{align*}
+			&S^{-1}(A-\lambda_0I)S\vec{v}_i = (B-\lambda_0I)\vec{v}_i = \vec{0}\\
+			\Ra &(A-\lambda_0I)S\vec{v}_i = S(B-\lambda_0I)\vec{v}_i =  \vec{0}\\
+			\Ra & S\vec{v}_i \in N(A-\lambda_0I)
+		\end{align*}
+		Ud fra foregående kan vi se at vi har minimum $k$ vektorer i nulrummet.
+		Argumentet for at $S\vec{v}_1,\dotsc,S\vec{v}_k$ er uafhængige er at 
+		antage
+		\begin{align*}
+			&c_1S\vec{v}_1 + \dotsb + c_kS\vec{v}_k\\
+			&= S(c_1\vec{v}_1 + \dotsb + c_k\vec{v}_k)\\
+			&= \vec{0}
+		\end{align*}
+		Og derfor er
+		\[
+			c_1\vec{v}_1 + \dotsb + c_k\vec{v}_k =
+			S^{-1}S(c_1\vec{v}_1 + \dotsb + c_k\vec{v}_k) =
+			S^{-1}\vec{0} =
+			\vec{0}
+		\]
+		og vi ved at $c_1= \dotsb =c_k = 0$, da $\vec{v}_1, \dotsc, \vec{v}_k$
+		er uafhængige.
+
+		Så vi kan konkludere at nulrummet for $N(A-\lambda_0 I)$ er større eller
+		lig $N(B-\lambda_0 I)$.
+		\[
+			\dim N(A-\lambda_0I) \ge \dim N(B-\lambda_0I)
+		\]
+
+		På samme måde kan man køre med baserne $\vec{w}_1,\dotsc, \vec{w}_k$
+		for $N(A-\lambda_0I)$, og nå frem til
+		\[
+			\dim N(A-\lambda_0I) \ge \dim N(B-\lambda_0I)
+		\]
+		Så
+		\[
+			\geo{A}(\lambda_0) =
+			\dim N(A-\lambda_0I) =
+			\dim N(B-\lambda_0I) =
+			\geo{B}(\lambda_0)
+		\]
+	\end{enumerate}
+\end{bevis}

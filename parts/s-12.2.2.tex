@@ -1,0 +1,67 @@
+\begin{saetning}{12.2.2 (Putzers Algoritme)}
+	Lad $A\in \mat_{n,n}(\mathbb{C})$ og $\lambda_1, \dotsc, \lambda_n$ være
+	$A$'s egenværdier, talt med multiplicitet.
+
+	Vi lader $P_k$ være
+	\[
+		P_k = \begin{cases}
+			I & \text{ hvis } k= 0\\
+			\prod_{j=1}^k(A-\lambda_jI) & \text{ for } k = 1, \dotsc, n
+		\end{cases}
+	\]
+	og kan nu definere $Q(t)$ som
+	\[
+		Q(t) = \sum_{k=0}^{n-1}r_{k+1}(t)P_k
+	\]
+	hvor $r_k$ er
+	\[
+		r_k(t) =
+		\begin{cases}
+			e^{\lambda_1t} & \text{ hvis } k = 1\\
+			e^{\lambda_kt}\int\limits_0^te^{-\lambda_ks}r_{k-1}(s) \:ds & \text{ for }
+			k = 2, \dotsc, n
+		\end{cases}
+	\]
+
+	Så gælder at $Q(0) = I$, og $Q'(t) = AQ(t) = Q(t)A$.
+\end{saetning}
+
+\begin{bevis}
+	Først kan vi sige at $r_1(0) = 1$, og $r_k(0) = 0$ for $k = 2, \dotsc, n$,
+	så $Q(0) = P_0 = I$.
+
+	Vi kan se at $A$ kommuterer med $(A - \lambda_iI$ for $i = 1, \dotsc, n$,
+	derfor kommuterer den også med $P_0, \dotsc, P_{n-1}$, og så med $Q(t)$.
+	Altså gælder det at $AQ(t) = Q(t)A$.
+
+	For $k > 1$ gælder ddet at
+	\begin{align*}
+		r'_k(t) &= (e^{\lambda_kt}\int\limits_0^te^{-\lambda_ks}r_{k-1}(s) \:ds)'\\
+		&= \lambda_ke^{\lambda_kt}\int\limits_0^te^{-\lambda_ks}r_{k-1}(s)\:ds
+		+ e^{\lambda_kt}e^{-\lambda_kt}r_{k-1}(t) && \text{kæde reglen}\\
+		&= \lambda_kr_k(t) + r_{k-1}(t)
+	\end{align*}
+
+	Ved at definere $r_0(t) = 0$, så gælder dette også for $k = 1$.
+
+	Vi har så at
+	\begin{align*}
+		Q'(t) &= \sum_{k=0}^{n-1}r'_{k+1}(t)P_k\\
+		&= \sum_{k=0}^{n-1}(\lambda_{k+1}r_{k+1}(t) + r_k(t))P_k
+	\end{align*}
+
+	og derfor
+	\begin{align*}
+		Q'(t) - AQ(t) &= \sum_{k=0}^{n-1}(\lambda_{k+1}r_{k+1}(t) + r_k(t))P_k
+		- A\sum_{k=0}^{n-1} r_{k+1}(t)P_k\\
+		&= \sum_{k=0}^{n-1} (-r_{k+1}(t)(A - \lambda_{k+1}I)P_k + r_k(t)P_k)\\
+		&= \sum_{k=0}^{n-1} (-r_{k+1}(t)P_{k+1}+r_k(t)P_k) \tag{$\clubsuit$}\\
+		&= -r_n(t)P_n \tag{$\sharp$}\\
+		&= 0
+	\end{align*}
+
+	I $(\clubsuit)$ udnytter vi at $r_0(t)P_0 = 0$, og at alle andre end 
+	$-r_n(t)P_n$ går ud med hinanden.
+
+	I $(\sharp)$ siger Cayley-Hamilton at $P_n = 0$. Beviset er fuldført.
+\end{bevis}
