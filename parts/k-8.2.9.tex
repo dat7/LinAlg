@@ -19,7 +19,8 @@
 	hvor $\hat{\vec{x}} = \begin{bmatrix}\hat{x}_1\\ \vdots \\ \hat{x}_n 
 	\end{bmatrix}$, og derfor må det gælde at for $i = 1, \cdots, n$:
 	\begin{align*}
-		\hat{\vec{x}}_i	&= \frac{1}{\det(A)}(\text{adj }A)_{:i}\vec{b}\\
+		\hat{\vec{x}}_i	&= \frac{1}{\det(A)}(\text{adj }A)_{i:}\vec{b} 
+							& \text{(den i'te række)}\\
 						&= \frac{1}{\det(A)}(A_{1i}b_1 + \cdots + A_{ni}b_n)\\
 						&= \frac{1}{\det(A)}\det(A_i)\\
 						&= \frac{\det(A_i)}{\det(A)}
