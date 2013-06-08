@@ -1,5 +1,7 @@
 \begin{saetning}{4.2.1}
-	Lad $L: \mathbb{F}^n \rightarrow \mathbb{F}^m$ være en lineær tranformation.	
+	Lad $L: \mathbb{F}^n \rightarrow \mathbb{F}^m$ være en lineær
+	transformation.	
+
 	Vi definerer $M(L) \in \mat_{m,n}(\mathbb{F})$ ved $M(L) = [L(\vec{e_1}), 
 	\cdots, L(\vec{e_n})]$.
 	Så er $L(\vec{x}) = M(L)\vec{x}$ for alle $\vec{x} \in \mathbb{F}^n$ og 
@@ -11,9 +13,9 @@
 	\mathbb{F}^n$, så kan $x$ skrives som en lineær kombination: $\vec{x} = 
 	x_1\vec{e_1} + \cdots + x_n\vec{e_n}$. Da må det gælde at:
 	\begin{align*}	
-		L(\vec{x}) &= L(x_1\vec{e_1} + \cdots + x_n\vec{e_n}) \\
-				   &= x_1L(\vec{e_1}) + \cdots + x_nL(\vec{e_n}) \\
-				   &= [L(\vec{e_1}), \cdots, L(\vec{e_n})]
+		L(\vec{x}) &= L(x_1\vec{e_1} + \dotsb + x_n\vec{e_n}) \\
+				   &= x_1L(\vec{e_1}) + \dotsb + x_nL(\vec{e_n}) \\
+				   &= [L(\vec{e_1}), \dotsc, L(\vec{e_n})]
 					\begin{bmatrix}
 						x_1 \\
 						\vdots \\
@@ -21,9 +23,9 @@
 					\end{bmatrix} \\
 				   &= M(L)\vec{x}
 	\end{align*}
-	Entydigheden kan vises hvis det så gælder at $A \in \mat_{m,n}(\mathbb{F})$ 
+	Entydighed: Hvis vi antager at $A \in \mat_{m,n}(\mathbb{F})$ 
 	tilfredsstiller $L(\vec{x}) = A\vec{x}$ for alle $\vec{x} \in 
 	\mathbb{F}^n$, så gælder dette specielt for $\vec{x} = \vec{e_i}$ hvor
-	$i = 1, \cdots, n$ at $L(\vec{e_i}) = A\vec{e_i} \Ra \{\text{i'te søjle i } 
+	$i = 1, \dotsc, n$ at $L(\vec{e_i}) = A\vec{e_i} \Ra \{\text{i'te søjle i } 
 	$A$\} = \{\text{i'te søjle i }$M(L)$\}$.
 \end{bevis}
