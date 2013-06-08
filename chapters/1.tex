@@ -5,17 +5,13 @@
 \section*{Disposition}
 \begin{enumerate}
 	\item Lineær Ligningssystem
-	\item \sout{Rækkeækvivalens}
-	\item ERO'er
 	\item REF \& RREF
 	\item Konsistens i Ligningssystemer
 	\item Mindste Kvadraters Løsninger
+	\item Den Normale Ligning
 \end{enumerate}
 
 \section{Lineære Ligningssystemer}
-
-\kbox{Eventuelt finde bevis der passer til lineære liningssystemer og måske
-	definere hvad søjlerum og nulrum er.}
 
 \subsection{Definition}
 Et lineært ligningssystem er et system af $m$ ligninger i $n$ ubekendte, hvor 
@@ -34,14 +30,14 @@ og $b$ er vektorer:
 Systemet løses ved at indsætte $c_1, \dots, c_n$ på $x$ plads, så begge sider
 af ligheden af den samme, altså er vektoren $c$ en del af løsningsmængden.
 
-\section{Rækkeækvivalens}
+\section*{Rækkeækvivalens}
 
 Hvis løsningsmængden for et ligningssystem $Ax = b$ og $Cx = d$ er ens, altså
 de har de samme $x$, kan $A$ og $C$ siges at være rækkeækvivalente.
 Sammenhængen mellem $A$ og $C$ vil da være at der er blevet benyttet en række
 \textit{ERO'er} på $A$ for at danne $C$.
 
-\subsection{ERO'er}
+\section*{ERO'er}
 Der er 3 elementære rækkeoperationer, som kan bruges til at manipulere med
 ligningssystemer.
 
@@ -52,7 +48,6 @@ ligningssystemer.
 	\item $R_i \Rightarrow R_i+tR_j$: addér $t$ gange $R_j$ til $R_i$ når $t 
 		\in \mathbb{F}, j \not= i$.
 \end{enumerate}
-
 
 \section{REF \& RREF}
 \subsection{REF}
@@ -97,5 +92,7 @@ $Ax = b$ og $p = A\hat{x}$, hvilket gør $p \in S\text{ø}(A)$, der er tættest 
 $b$.
 
 \input{parts/p-5.2.2}
+
+\section{Den Normale Ligning}
 \input{parts/p-5.2.4}
 

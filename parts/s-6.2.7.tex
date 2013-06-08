@@ -15,8 +15,8 @@
 \begin{bevis}
 	Hvis $\vec{v}=\vec{0}$ er der lighed
 	\[
-		\lvert \langle \vec{u}, \vec{v} \rangle \rvert = 0 = \norm{\vec{u},
-		\vec{v}}
+		\lvert \langle \vec{u}, \vec{v} \rangle \rvert = 0 = \norm{\vec{u}}
+		\norm{\vec{v}}
 	\]
 	
 	\noindent Hvis $\vec{v} \not= \vec{0}$ lades $\vec{p}$ være projektionen af $\vec{u}$
@@ -26,9 +26,9 @@
 	\]
 	Fra skalarprojektionen så
 	\[
-		\frac{\lvert \langle \vec{u}, \vec{v} \rangle \rvert}{\norm{\vec{v}}^2}
+		\frac{\lvert \langle \vec{u}, \vec{v} \rangle \rvert^2}{\norm{\vec{v}}^2}
 		= {\lvert \alpha \rvert}^2 = \alpha \overline\alpha = \norm{\vec{p}}^2
-		= \norm{\vec{u}}^2 - \norm{\vec{u}} - \norm{\vec{u} - \vec{p}}^2
+		= \norm{\vec{u}}^2 - \norm{\vec{u} - \vec{p}}^2
 	\]
 	\begin{center}
 		\begin{tikzpicture}
@@ -49,9 +49,9 @@
 	\end{center}
 	Hvilket giver
 	\[
-		\lvert \langle \vec{u}, \vec{v} \rangle \rvert = \norm{\vec{u}}^2
+		\lvert \langle \vec{u}, \vec{v} \rangle \rvert^2 = \norm{\vec{u}}^2
 		\norm{\vec{v}}^2 - \norm{\vec{u} - \vec{p}}^2\norm{\vec{v}}^2 \leq
-		\norm{\vec{u}, \vec{v}}
+		\norm{\vec{u}}^2\norm{\vec{v}}^2
 	\]
 	hvor der gælder lighed hvis $u=p$.
 

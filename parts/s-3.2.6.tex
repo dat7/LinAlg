@@ -1,0 +1,49 @@
+\begin{saetning}{3.2.6}
+	Lad $A = [\vec{a}_1, \dotsc, \vec{a}_n] \in
+	\mat_{m,n}(\mathbb{F})$ på søjleform, og lad $A \sim H$ på RREF, således at
+	$H$ har $k$ søjler med pivot.
+	
+	Hvor $\{\vec{a}_1, \dotsc, \vec{a}_k\}$ omnummereres til at indeholde
+	søjlerne med pivoter, som er en basis for $\text{Sø}(A)$.
+\end{saetning}
+
+\begin{bevis}
+	$A$ og $H$ har samme løsningsmængde da vi kan lave en lineær kombination af
+	$H$
+	\[
+		c_1 \vec{h}_1 + \dotso + c_n \vec{h}_n = 0
+	\]
+	hvor $c_1,\dotsc,c_n$ findes hvis og kun hvis $A \vec{c} = 0 \Lra H \vec{c}
+	= 0$.
+
+	Da $H$ er på RREF må
+	\[
+		\vec{h}_i = \vec{e}_i = \begin{bmatrix}
+			0 \\
+			\vdots \\
+			1 \\
+			\vdots \\
+			0
+		\end{bmatrix}
+	\]
+	for $i=1,\dotsc,k$ og der gælder at de $k$ søjler i $H$ er uafhængige og 
+	de $n-k$ andre søjler kan beskrives som en lineær kombinationer af de $k$
+	søjler.
+	
+	Dermed må $\{\vec{a}_1, \dotsc, \vec{a}_k\}$ være en basis for
+	$\text{Sø}(A)$ på grund af ækvivalencen mellem løsningsmængderne til $A$ og
+	$H$.
+\end{bevis}
+
+\[
+	\begin{bmatrix}
+		1 & 	   & 0 & \vline \\
+		  & \ddots &   & ? \\
+		0 &        & 1 & \\
+		\hline 
+		  &   0    &   & 0
+	\end{bmatrix}
+\]
+
+%	Lad $j_1 < \dotsb < j_k$ være numrene på de søjler i $H$, som inderholder
+%	pivot.

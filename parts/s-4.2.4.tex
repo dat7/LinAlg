@@ -8,19 +8,20 @@
 	ordnede baser for $V$, $W$. Lad $L \colon V \ra W$ være en lineær transformation.
 	\[
 		M_{\mathcal{W},\mathcal{V}} = [[L(\vec{v_1})]_\mathcal{W}, \cdots,
-		[L(\vec{v_1})]_\mathcal{W}]
+		[L(\vec{v_n})]_\mathcal{W}]
 	\]
-	Der gælder, at $[L(\vec{v_1})]_\mathcal{W} = M_{\mathcal{W},\mathcal{V}}
+	Der gælder, at $[L(\vec{v})]_\mathcal{W} = M_{\mathcal{W},\mathcal{V}}
 	[\vec{v}]_\mathcal{W}$ for alle $\vec{v} \in V$, samt at
 	$M_{\mathcal{W},\mathcal{V}}$ er den entydige matrix med denne egenskab.
 \end{saetning}
 
 \begin{bevis}
-	Lad $\vec{v} \in V$ hvor $\vec{v} = x_1 \vec{v_1}, \cdots, x_1 \vec{v_1}$
+	Lad $\vec{v} \in V$ hvor $\vec{v} = x_1 \vec{v_1} + \cdots + x_1 \vec{v_n}$
 	og $\begin{bmatrix} x_1 \\ \vdots \\ x_n \end{bmatrix} =
 	[\vec{v}]_\mathcal{V}$. Vi har
 	\[
-		L(\vv) = L(x_1 \vec{v_1} + \cdots + x_n \vec{v_n})
+		L(\vv) = L(x_1 \vec{v_1} + \cdots + x_n \vec{v_n}) = x_1L(\vec{v_1}) + 
+		\dotsc + x_nL(\vec{v_n})
 	\]
 	så
 	\begin{align*}
@@ -37,7 +38,7 @@
 
 	Hvis $A \in Mat_{m,n}(\mathbb{F})$ tilfredsstiller at
 	\[
-		[L(\vv)]_\sW = A[\vec{v_1}]_\sV = Ae_i = \{i \text{'te søjle i } A\}
+		[L(\vv_i)]_\sW = A[\vec{v_i}]_\sV = Ae_i = \{i \text{'te søjle i } A\}
 	\]
 	Så har $M_{\sV,\sW}(L)$ og $A$ de samme søjler og er derfor ens.
 \end{bevis}
