@@ -28,17 +28,20 @@
 
 	\noindent Der gælder derfor
 	\begin{align*}
-		\vec{p} - \vec{v} \in S \Lra & \langle \vec{s}, \vec{p} - \vec{v}
-				\rangle & \text{for alle } \vec{s} \in S \\
-			\Lra & \langle \alpha_1 \vec{s}_1, \dotsc, \alpha_k \vec{s}_k, 
-				\vec{v} - \vec{p} \rangle & \text{for alle } \alpha_1, \dotsc,
-				\alpha_k \in \mathbb{K} \\
-			\Lra & \alpha_1 \langle \vec{s}_1, \vec{v} - \vec{p} \rangle,
-				\dotsc, \alpha_k \langle \vec{s}_k, \vec{v} -\vec{p} \rangle \\
-			\Lra & \langle \vec{s}_i, \vec{v} - \vec{p} \rangle & \text{for }
+		\vec{p} - \vec{v} \in S^\bot \Lra & \langle \vec{s}, \vec{p} - \vec{v} 
+				\rangle = 0 & \text{for alle } \vec{s} \in S \\
+			\Lra & \langle \alpha_1 \vec{s}_1 + \dotsc + \alpha_k \vec{s}_k, 
+				\vec{p} - \vec{v} \rangle = 0 & \text{for alle } \alpha_1, 
+				\dotsc, \alpha_k \in \mathbb{K} \\
+			\Lra & \alpha_1 \langle \vec{s}_1, \vec{p} - \vec{v} \rangle +
+				\dotsc + \alpha_k \langle \vec{s}_k, \vec{p} -\vec{v} \rangle 
+				= 0 \\
+			\Lra & \langle \vec{s}_i, \vec{p} - \vec{v} \rangle = 0 & \text{for }
 				i = 1, \dotsc, k \\
-			\Lra & \langle \vec{s}_i, \vec{v} \rangle = \langle
-				\vec{s}_i, \vec{p} \rangle \\
+			\Lra & \langle \vec{s}_i, \vec{p}\rangle - \langle \vec{s}_i, 
+				\vec{v} \rangle = 0 \\
+			\Lra & \langle \vec{s}_i, \vec{p} \rangle = \langle
+				\vec{s}_i, \vec{v} \rangle \\
 			\Lra & \langle \vec{p}, \vec{s}_i \rangle = \langle
 				\vec{v}, \vec{s}_i \rangle
 	\end{align*}
