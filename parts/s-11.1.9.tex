@@ -11,7 +11,7 @@
 	\noindent
 	Antag nu at det gælder for en matrix $B \in \mat_{n-1,n-1}(\mathbb{C})$.
 	
-	Lad $A\in \mat_{n,n}(\mathbb{B})$ med en egenværdi $\lambda_1 \in
+	Lad $A\in \mat_{n,n}(\mathbb{C})$ med en egenværdi $\lambda_1 \in
 	\mathbb{C}$, og en tilhørende egenvektor $\vec{v}_1 \in \mathbb{C}^n$.
 
 	Vi kan arrangere at $\norm{\vec{v}_1} = 1$. Og vi kan udvide
@@ -33,7 +33,7 @@
 		= \lambda_1\vec{e}_1
 	\]
 
-	Vi ved derfor at første i $U_1^HAU_1$ er på formen $(\lambda_1, 0,
+	Vi ved derfor at første række i $U_1^HAU_1$ er på formen $(\lambda_1, 0,
 	\dotsc,0)^T$, og kan derfor skrive $U_1^HAU_1$ som
 	\[
 		U_1^HAU_1 = \begin{bmatrix}
@@ -43,9 +43,11 @@
 	\]
 
 	Her er $\vec{r}$ en rækkevektor og $\vec{0}$ en søjlevektor, begge med
-	$n-1$ indgange, og $A_1$ er defineret som minoren $M(A)_{1,1}$.
+	$n-1$ indgange, og $A_1 \in \mat_{n-1,n-1}(\mathbb{C})$ er det næste skridt
+	i vores induktion.
 	
-	Per induktionshypotesen findes der en unitær matrix $C \in \mat_{n-1,n-1}$
+	Per induktionshypotesen findes der en unitær matrix $C \in
+	\mat_{n-1,n-1}(\mathbb{C})$
 	der opfylder $C^HA_1C=B$, så $B$ er en øvre triangulær matrix $\in
 	\mat_{n-1,n-1}(\mathbb{C})$.
 
