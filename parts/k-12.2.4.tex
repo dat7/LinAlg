@@ -1,0 +1,37 @@
+\begin{korollar}{12.2.4}
+	Lad $A \in \mat_{n,n}(\mathbb{C}), \vec{v} \in \mathbb{C}^n$. Ligningen
+	\[
+		y' = Ay
+	\]	
+	har en entydig løsning $x: \mathbb{R} \rightarrow \mathbb{C}^n$ med 
+	$x(0) = \vec{v}$, givet ved $x(t) = exp(tA)\vec{v}$.
+
+\end{korollar}
+
+\begin{bevis}
+	Vi beregner
+	\begin{align*}	
+		x'(t) &= \frac{d}{dt}(exp(tA)v) \\
+		&= A exp(tA)\vec{v} \\
+		&= A x(t)
+	\end{align*}
+	Da $x(0) = I\vec{v} = \vec{v}$, er funktionen $x$ en løsning med den 
+	ønskede værdi i 0.
+
+	Lad $z$ være en anden løsning med $z(0) = \vec{v}$. Vi beregner
+	\begin{align*}
+		\frac{d}{dt}(exp(-tA)z(t) &= -A exp(-tA)z(t) + exp(-tA)z'(t) \\
+		&= -A exp(-tA)z(t) + exp(-tA)Az(t) \\
+		&= 0
+	\end{align*}
+	fordi $A$ og $exp(-tA)$ kommuterer.
+	
+	Så $exp(-tA)z(t)$ er konstant, så lig med $\vec{v}$, dens værdi når 
+	$t = 0$. Vi har da
+	\begin{align*}
+		z(t) &= exp(tA)exp(-tA)z(t) \\
+		&= exp(tA)\vec{v} \\
+		&= x(t)
+	\end{align*}
+	og entydigheden er vist.
+\end{bevis}
