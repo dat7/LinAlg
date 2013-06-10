@@ -44,3 +44,10 @@
 }
 
 \tikzstyle{every picture}+=[remember picture]
+
+\usepackage[pagestyles]{titlesec}
+
+\newpagestyle{mystyle}{%
+  \headrule\sethead{\chaptername\ \thechapter: \chaptertitle}{}{}
+  \setfoot{}{\thepage}{}}
+\pagestyle{mystyle}
